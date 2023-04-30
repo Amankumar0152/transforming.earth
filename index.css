@@ -1,0 +1,325 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.header > h1 > a{
+    color:crimson;
+    margin: 23px;
+    text-align: center;
+    text-decoration: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.header > h1 > a:hover{
+  opacity: 0.7;
+}
+.header > h1{
+    padding-top: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+.container > h2{
+    color: cornflowerblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container > h3{
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container > h3 > a{
+    color: #000000;
+    text-decoration: none;
+}
+.container > h3 > a:hover{
+    color: cornflowerblue;
+}
+.main-nav{
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.main-nav > ul{
+    text-align: center;
+    background-color: #000000;
+    list-style: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius:20px ;
+    border-top-left-radius:20px ;
+    border-top-right-radius:20px ;
+}
+
+.main-nav > ul > li{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: inline-block;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.main-nav > ul > li > a{
+    text-decoration: none;
+    color: white;
+}
+.main-nav > ul > li > a:hover{
+  opacity: 0.7;
+}
+.main-nav > ul > li > a:hover{
+    color:crimson;
+}
+
+.header > img{
+    border-radius: 50%;
+    display: block;
+    margin-right:auto;
+    margin-left: auto;
+    padding-bottom: 10px;
+}
+.column > img{
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius:16px ;
+    border-top-left-radius:16px ;
+    border-top-right-radius:16px ;
+}
+.column > a >img{
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius:16px ;
+    border-top-left-radius:16px ;
+    border-top-right-radius:16px ;
+}
+
+/*.column > img{
+    width: 100%;
+    height: auto;
+}*/
+
+.column > h3 > p{
+    color:#000000;
+}
+.container > h4 > a{
+    text-decoration: none;
+}
+.row{
+    margin-top: 20px;
+}
+
+.wrapper{
+    background-color:#ffff;
+    padding-left:15px ;
+    padding-right:15px;
+    margin-left:25px ;
+    margin-right:25px;
+    margin-bottom: 10px;
+}
+.h3 a h2{
+  color: cornflowerblue;
+}
+.container h4 {
+  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+}
+.container h4 a{
+  text-decoration: none;
+  color: cornflowerblue;
+}
+.footer{
+    text-align: center;
+    background-color:black;
+    font-size: 20px;
+}
+.footer > a{
+    text-decoration: none;
+    color: white;
+}
+.footer{
+    color: white;
+}
+.footer > a:hover{
+    color: greenyellow;
+
+}
+.footer{
+    padding-bottom:15px ;
+    margin: 9px;
+}
+.footer{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius:20px ;
+    border-top-left-radius:20px ;
+    border-top-right-radius:20px ;
+}
+
+.header > img{
+    position: absolute;
+    top: 10%;
+    left: 30%;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {opacity: 0;}
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+
+  .column img {
+    float: left;
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .front > img{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .sun{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  }
+  .images{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  .column h3 p{
+    text-align: center;
+  }
+  .front{
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .home{
+    font-size: 35px;
+    text-decoration: none;
+    top: 100px;
+    right: 30px;
+    color: black;
+  }
+  .home{
+    position: absolute;
+    left: 75px;
+    top: 55px;
+  }
+
+  .gallery{
+    font-size: 35px;
+    text-decoration: none;
+    top: 100px;
+    right: 30px;
+    color: black;
+  }
+  .gallery{
+    position: absolute;
+    left: 200px;
+    top: 55px;
+  }
+
+  .insta{
+    font-size: 35px;
+    text-decoration: none;
+    top: 100px;
+    right: 30px;
+    color: black;
+  }
+  .insta{
+    position: absolute;
+    left: 350px;
+    top: 55px;
+  }
+.life{
+    font-size: 35px;
+    text-decoration: none;
+    top: 100px;
+    right: 30px;
+    color: black;
+}
+
+.life{
+    position: absolute;
+    left: 500px;
+    top: 55px;
+}
+
+.about{
+    font-size: 35px;
+    text-decoration: none;
+    top: 100px;
+    right: 30px;
+    color: black;
+}
+.about{
+    position: absolute;
+    left: 638px;
+    top: 55px;
+}
+
+  @media only screen and (max-width:1080px){
+    .header h1 a{
+      font-size: 26px;
+    }
+    .main-nav ul li{
+      font-size: 20px;
+    }
+    .sun{
+      width: 90%;
+      margin-left: 8px; 
+    }
+    .column h3 p{
+      font-size: 16px;
+      font-weight: bold;
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color:crimson;
+    }
+    .column {
+      float: left;
+      width: 100%;
+      padding: 5px;
+    }
+  
+    .column img {
+      float: left;
+      width: 100%;
+      padding: 5px;
+    }
+    
+    .row::after {
+      content: "";
+      clear: both;
+      display:inline-block;
+    }
+    
+  }
