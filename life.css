@@ -41,3 +41,14 @@
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
+.content h2{
+    text-align: center;
+    color: #000000;
+}
+.content h2 a{
+    text-decoration: none;
+    color: black;
+}
+.content h2 a:hover{
+    color: coral;
+}
