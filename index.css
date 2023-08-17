@@ -145,12 +145,12 @@
   padding-bottom:15px ;
   margin: 9px;
 }
-/*.footer{
+.footer{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius:20px ;
     border-top-left-radius:20px ;
     border-top-right-radius:20px ;
-}*/
+}
 
 .header > img{
     position: absolute;
