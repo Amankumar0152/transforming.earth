@@ -1,0 +1,77 @@
+/* Style buttons */
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 10px;
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: rgb(31, 216, 41);
+  }
+  .container h1{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: white;
+  }
+  .container h2{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: white;
+  }
+  body{
+    background-color: black;
+}
+.container h2 a{
+  text-decoration: none;
+  color: white;
+}.container h2 a:hover{
+  color: orangered;
+}
+
+@media only screen and (max-width:1080px){
+
+  .container h2{
+    font-size: 10px;
+  }
+
+  .container a{
+    text-align: center;
+    height:100% ;
+    width:100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    margin: 0 22px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+  }
+
+  .wrapper > h1{
+    position: absolute;
+    top: 15%;
+    left:47%;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+  }
+
+  .text h2{
+    position: absolute;
+    top: 8%;
+    left:23%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: white;
+
+  }
+  
+  }
+  
