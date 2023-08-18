@@ -12,13 +12,14 @@
 }
 .header > a{
     text-align: center;
+    color: green;
 }
 .header > a:hover{
-    opacity: 0.7;
+    color: cornflowerblue;
 }
 .header{
     text-align: center;
-    background-color: black;
+    background-color:wheat;
 }
 
 .content > h1{
@@ -30,6 +31,7 @@
     left: 22px;
 }
 .content > h3{
+    padding: 10px 10px;
     font-weight: bold;
     color: #FFFFE0;
     margin-top: 50px;
@@ -41,14 +43,31 @@
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
-.content h2{
+.image{
+    width: 80%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color:cornflowerblue;
+}
+
+.columns{
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .columns h1{
     text-align: center;
-    color: #000000;
-}
-.content h2 a{
-    text-decoration: none;
-    color: black;
-}
-.content h2 a:hover{
-    color: coral;
-}
+    font-family: cursive;
+    color: green;
+    font-size: 18px;
+  }
