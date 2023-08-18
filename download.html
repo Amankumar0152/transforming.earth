@@ -1,62 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="download.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>wallpapers-download</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download-free-wallpapers</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  h1 {
+    text-align: center;
+    padding: 20px;
+  }
+  h2 a{
+    text-decoration: none;
+    color: cornflowerblue;
+    padding-left: 20px;
+  }
+  h2 a:hover{
+    color:rgb(26, 87, 219);
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .gallery-item:hover {
+    transform: scale(1.1);
+  }
+  .gallery-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+  }
+  .download-button {
+    position:absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  .download-button:hover{
+    color: greenyellow;
+  }
+  .footer{
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 30px;
+  }
+  .footer a{
+    color: #000000;
+  }
+
+  @media only screen and (max-width:1080px){
+    h1{
+      font-size: 15px;
+    }
+
+    .download-button{
+      font-size: 8px;
+      bottom: 7px;
+    }
+    .gallery-img{
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+    }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Download for free wallpapers </h1>
-        <h2>All images is Available Higher Qualities just Download and apply for Desktop Wallpaper</h2>
-        <a href="/anchor.jpg" download>
-            <img src="/anchor.jpg" style="width:25%" >
-            <button class="btn"><i class="fa fa-download"></i> Download</button>
-          </a>
+  <h2><a href="https://wallflare.pages.dev/" target="_blank"><i class="fa-solid fa-mountain-sun"></i> Wall-flare.cloud</a></h2>
+<h1>Download HD non copyrighted photos for free on wallflare.</h1>
+<div class="gallery">
+  <div class="gallery-item">
+    <img class="gallery-img" src="tree2.jpg" alt="Image 2">
+    <a class="download-button" href="tree2.jpg" download>Download</a>
+  </div>
+  <div class="gallery-item">
+    <img class="gallery-img" src="anchor.jpg" alt="Image 1">
+    <a class="download-button" href="anchor.jpg" download>Download</a>
+  </div>
+  <div class="gallery-item">
+    <img class="gallery-img" src="gangaboats.jpg" alt="Image 2">
+    <a class="download-button" href="gangaboats.jpg" download>Download</a>
+  </div>
 
-          <a href="/evening.jpg" download>
-            <img src="/evening.jpg" style="width:25%" >
-            <button class="btn"><i class="fa fa-download"></i> Download</button>
-          </a>
 
-          <a href="/gangaboats.jpg" download>
-            <img src="/gangaboats.jpg" style="width:25%" >
-            <button class="btn"><i class="fa fa-download"></i> Download</button>
-          </a>
 
-          <a href="/river.jpg" download>
-            <img src="/river.jpg" style="width:25%" >
-            <button class="btn"><i class="fa fa-download"></i> Download</button>
-          </a>
+  <div class="gallery-item">
+    <img class="gallery-img" src="aeroplane.jpg" alt="Image 1">
+    <a class="download-button" href="aeroplane.jpg" download>Download</a>
+  </div>
+  <div class="gallery-item">
+    <img class="gallery-img" src="sunflower.jpg" alt="Image 2">
+    <a class="download-button" href="sunflower.jpg" download>Download</a>
+  </div>
+  <div class="gallery-item">
+    <img class="gallery-img" src="road.jpg" alt="Image 3">
+    <a class="download-button" href="road.jpg" download>Download</a>
+  </div>
 
-          <a href="/road.jpg" download>
-            <img src="/road.jpg" style="width:25%" >
-            <button class="btn"><i class="fa fa-download"></i> Download</button>
-          </a>
 
-          <a href="/river2.jpg" download>
-            <img src="/river2.jpg" style="width:25%" >
-            <button class="btn"><i class="fa fa-download"></i> Download</button>
-          </a>
 
-          <a href="/road2.jpg" download>
-            <img src="/road2.jpg" style="width:25%" >
-            <button class="btn"><i class="fa fa-download"></i> Download</button>
-          </a>
+  <div class="gallery-item">
+    <img class="gallery-img" src="evening.jpg" alt="Image 1">
+    <a class="download-button" href="evening.jpg" download>Download</a>
+  </div>
+  <div class="gallery-item">
+    <img class="gallery-img" src="brightsun-down.jpg" alt="Image 3">
+    <a class="download-button" href="brightsun-down.jpg" download>Download</a>
+  </div>
+  <div class="gallery-item">
+    <img class="gallery-img" src="tree.jpg" alt="Image 3">
+    <a class="download-button" href="tree.jpg" download>Download</a>
+  </div>
 
-          <a href="/sunflower.jpg" download>
-            <img src="/sunflower.jpg" style="width:25%" >
-            <button class="btn"><i class="fa fa-download"></i> Download</button>
-          </a>
 
-          <a href="/tree.jpg" download>
-            <img src="/tree.jpg" style="width:25%" >
-            <button class="btn"><i class="fa fa-download"></i> Download</button>
-          </a>
-          <h2>Download HD non copyrighted photos for free on <a href="index.html">wallflare.</a></h2>
-    </div>
+
+<div class="gallery-item">
+    <img class="gallery-img" src="river.jpg" alt="Image 1">
+    <a class="download-button" href="river.jpg" download>Download</a>
+  </div>
+
+  <div class="gallery-item">
+    <img class="gallery-img" src="river2.jpg" alt="Image 3">
+    <a class="download-button" href="river2.jpg" download>Download</a>
+  </div>
+
+  
+  <div class="gallery-item">
+    <img class="gallery-img" src="pots-flower.jpg" alt="Image 3">
+    <a class="download-button" href="pots-flower.jpg" download>Download</a>
+  </div>
+
+
+  <div class="gallery-item">
+    <img class="gallery-img" src="sun-rising.jpg" alt="Image 2">
+    <a class="download-button" href="sun-rising.jpg" download>Download</a>
+  </div>
+  <div class="gallery-item">
+    <img class="gallery-img" src="winter-sunrise.jpg" alt="Image 2">
+    <a class="download-button" href="winter-sunrise.jpg" download>Download</a>
+  </div>
+  <div class="gallery-item">
+    <img class="gallery-img" src="evening-2.jpg" alt="Image 2">
+    <a class="download-button" href="evening-2.jpg" download>Download</a>
+  </div>
+
+
+  <div class="gallery-item">
+    <img class="gallery-img" src="road2.jpg" alt="Image 1">
+    <a class="download-button" href="road2.jpg" download>Download</a>
+  </div>
+  <div class="gallery-item">
+    <img class="gallery-img" src="bigsky.jpg" alt="Image 1">
+    <a class="download-button" href="bigsky.jpg" download>Download</a>
+  </div>
+  <div class="gallery-item">
+    <img class="gallery-img" src="oilsunflower.jpg" alt="Image 1">
+    <a class="download-button" href="oilsunflower.jpg" download>Download</a>
+  </div>
+  
+  <!-- Add more gallery items here -->
+</div>
+
+<div class="footer"> &copy; 2023 Nature and Livinglife. All rights reserved. || Designed by <a href="https://www.amankumar.tech/">Aman Kumar</a></div>
 </body>
 </html>
