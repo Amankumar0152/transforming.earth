@@ -230,10 +230,12 @@
   }
 
   .front > img{
-    border-bottom-left-radius: 20px;
+    border-radius: 50%;
+    width: 10%;
+    /*border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-right-radius: 20px;*/
   }
   .sun{
   display: block;
@@ -393,6 +395,14 @@
   @media only screen and (max-width:1080px){
     .header h1 a{
       font-size: 20px;
+    }
+    .front > img{
+      border-radius: 50%;
+      width: 50%;
+      /*border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;*/
     }
     .container h2{
       padding-top: 30px;
