@@ -8,11 +8,100 @@
     <script src="https://kit.fontawesome.com/2917500283.js" crossorigin="anonymous"></script>
     <title>Nature and Livinglife</title>
     <link rel="icon" href="image/sun-profile.png">
+    <style>
+        body {
+            ::selection{
+                background-color: lightgreen;
+            }
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .menu-button {
+            cursor: pointer;
+            padding: 10px;
+            background-color:#007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 2;
+        }
+
+        .menu-container {
+            width: 0;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #f1f1f1;
+            overflow-x: hidden;
+            transition: 0.5s;
+            z-index: 1;
+        }
+
+        .menu-content {
+            padding: 40px;
+            width: 600%;
+            height: 40%;
+        }
+        .menu-content ul li a{
+            text-decoration: none;
+            color: cornflowerblue;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        .menu-content ul li{
+            padding: 10px;
+        }
+        .menu-content ul li a:hover{
+            opacity: 0.7;
+        }
+
+        .menu-button:hover {
+            background-color: #006cdf;
+        }
+    </style>
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="navbar">
+
+
+        <button class="menu-button" onclick="toggleMenu()">Menu</button>
+    <div class="menu-container" id="myMenu">
+        <div class="menu-content">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#connect"><i class="fa-solid fa-rss fa-rotate-270"></i> Connect</a></li>
+                <li><a href="gallery.html"><i class="fa-solid fa-image"></i> Gallery</a></li>
+                <li><a href="download.html"><i class="fa-solid fa-cloud-arrow-down"></i> Download</a></li>
+                <li><a href="https://www.instagram.com/nature_and_livinglife/" target="_blank"><i class="fa-brands fa-instagram"></i> instagram</a></li>
+                <li><a href="life.html"><i class="fa-solid fa-heart-pulse"></i> livinglife</a></li>
+                <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("myMenu");
+            if (menu.style.width === "250px") {
+                menu.style.width = "0";
+            } else {
+                menu.style.width = "250px";
+            }
+        }
+    </script>
+
+
+
+
+       <!-- <div class="navbar">
             <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
             <a href="#connect"><i class="fa-solid fa-rss fa-rotate-270"></i> Connect</a>
             <a href="gallery.html"><i class="fa-solid fa-image"></i> Gallery</a>
@@ -28,21 +117,26 @@
                 <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
               </div>
             </div>
-          </div>
+          </div> -->
         <div class="header">
             <h1><a href="https://www.instagram.com/nature_and_livinglife/" target="_blank">Nature and Livinglife</a></h1>
+            
         </div>
 
         <div class="container">
-            <h2><i class="fa-solid fa-quote-left"></i> Quotes</h2> <br>
-            <h3> Nothing compares to nature's beauty, as these famous quotes about nature agree From spring's hopeful <br>
+            
+            
+            <h3><div class="front">
+                <img src="image/sunflower-profile.jpg" alt="Sun Flower" class="sun">
+            </div>
+
+            
+                 Nothing compares to nature's beauty, as these famous quotes about nature agree From spring's hopeful <br>
                 new blooms and fall's exquisite array of colors to winter's  magic and summer's energy, each <br> <br>
                 season abounds with different types of natural beauty to explore and admire For those who <br>
                 may forget what being in nature feels like—this is where these best 
                  nature quotes come in!<br>
-                <div class="front">
-                    <img src="image/sunflower-profile.jpg" alt="Sun Flower" class="sun">
-                </div>
+                 
               
              <!--<h4>if you have also good Quality of Pictures then post on your instagram account and tag me as <br>
                 <button type="button"><a href="https://www.instagram.com/nature_and_livinglife/" target="_blank"><h2><i class="fa-brands fa-instagram"></i> nature-and-livinglife</h2> </a></button> <br> <br> </h4>-->
