@@ -2,22 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nature-and-livinglife</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="darkmode.css">
     <script src="https://kit.fontawesome.com/2917500283.js" crossorigin="anonymous"></script>
-    <title>Nature and Livinglife</title>
-    <link rel="icon" href="image/sun-profile.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
-        body {
-            ::selection{
-                background-color: lightgreen;
-            }
-            margin: 0;
-            padding: 0;
-            
-        }
-
+        body
         .menu-button {
             cursor: pointer;
             padding: 10px;
@@ -25,10 +17,13 @@
             color: #fff;
             border: none;
             border-radius: 5px;
-            position: absolute;
-            left: 10px;
-            top: 10px;
+            position:relative;
+            justify-content: center;
+            align-items: center;
+            /*left: 200px;
+            top: 10px;*/
             z-index: 2;
+            overflow: hidden;
         }
 
         .menu-container {
@@ -37,7 +32,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            background-color: #f1f1f1;
+            background-color: #fff;
             overflow-x: hidden;
             transition: 0.5s;
             z-index: 1;
@@ -46,7 +41,7 @@
         .menu-content {
             padding: 40px;
             width: 600%;
-            height: 40%;
+            height: 20%;
         }
         .menu-content ul li a{
             text-decoration: none;
@@ -54,6 +49,9 @@
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             font-size: 1em;
+        }
+        .menu-content ul li a:hover{
+            color: lightcoral;
         }
         .menu-content ul li{
             padding: 10px;
@@ -67,15 +65,16 @@
         }
     </style>
 </head>
-
 <body>
-    <div class="wrapper">
-
+    <div class="container">
 
         <button class="menu-button" onclick="toggleMenu()">Menu</button>
-    <div class="menu-container" id="myMenu">
-        <div class="menu-content">
+        <div class="menu-container" id="myMenu">
+         <div class="menu-content">
+        
+           
             <ul>
+                
                 <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
                 <li><a href="#connect"><i class="fa-solid fa-rss fa-rotate-270"></i> Connect</a></li>
                 <li><a href="gallery.html"><i class="fa-solid fa-image"></i> Gallery</a></li>
@@ -99,93 +98,139 @@
     </script>
 
 
+        <header>
+            <h1>Nature and Livinglife<span class="material-symbols-outlined">
+                verified
+                </span></h1>
+        </header>
+        <div class="profile">
+            <img src="image/sunflower-profile.jpg" alt="sun-flower-image">
+            <h2>Aman Kumar</h2>
+            <h3>Photographer</h3>
+            <p>what a busy day! let's take some outside pictures like River, Forest, trees, mountains, animals, blue sky, 
+                capture everything what you can see.....
+            </p>
+            <p>Nothing compares to nature's beauty, as these famous quotes about nature agree From spring's hopeful
+                new blooms and fall's exquisite array of colors to winter's magic and summer's energy.</p>
+                <p>
+                    Everything in nature invites us constantly to be what we are. <span class="spn">—Gretel Ehrlich</span>
+
+                       Nature teaches more than she preaches. There are no sermons in stone.
+
+                          It is easier to get a spark out of a stone than a moral. <span class="spn">—John Burroughs</span>
+
+                            The goal of life is living in agreement with nature. <span class="spn">—Zeno</span>
+                </p>
+            <a href="https://www.instagram.com/nature_and_livinglife/" target="_blank"><i class="fa-solid fa-link"></i>www.natureandliving.life</a>
+            <table align="center">
+                <th>175</th>
+                <th>2.7M</th>
+                <th>614</th>
+
+                <tr>
+                    <td>Posts</td>
+                    <td>Followers</td>
+                    <td>Following</td>
+                </tr>
+            </table>
+            <div class="buttons">
+                   <button class="follow-button"><a href="https://www.instagram.com/nature_and_livinglife/" target="_blank">Follow</a></button>
+                   <button class="message-button"><a href="https://www.instagram.com/nature_and_livinglife/" target="_blank">Message</a></button>
+                   <button class="call-button"><a href="https://www.instagram.com/nature_and_livinglife/">Call</a></button>
+                   
 
 
-       <!-- <div class="navbar">
-            <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
-            <a href="#connect"><i class="fa-solid fa-rss fa-rotate-270"></i> Connect</a>
-            <a href="gallery.html"><i class="fa-solid fa-image"></i> Gallery</a>
-            <a href="download.html"><i class="fa-solid fa-cloud-arrow-down"></i> Download</a>
+                 <!--  <button class="dark"><h1 onclick="myFunction()"><i class="fa-solid fa-sun"></i></h1></button>
+                   <div class="darkmode">
+                    <h1 onclick="myFunction()"><i class="fa-solid fa-sun"></i></h1>
+                  </div>
+                  
             
-            <div class="dropdown">
-              <button class="dropbtn">More
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="https://www.instagram.com/nature_and_livinglife/" target="_blank"><i class="fa-brands fa-instagram"></i> instagram</a>
-                <a href="life.html"><i class="fa-solid fa-heart-pulse"></i> living-life</a>
-                <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
-              </div>
+                  <script>
+                  function myFunction() {
+                     var element = document.body;
+                     element.classList.toggle("dark-mode");
+                  }
+                </script> -->
+
+
             </div>
-          </div> -->
-        <div class="header">
-            <h1><a href="https://www.instagram.com/nature_and_livinglife/" target="_blank">Nature and Livinglife</a></h1>
-            
-        </div>
-
-        <div class="container">
-            
-            
-            <h3><div class="front">
-                <img src="image/sunflower-profile.jpg" alt="Sun Flower" class="sun">
-            </div>
-
-            
-                 Nothing compares to nature's beauty, as these famous quotes about nature agree From spring's hopeful <br>
-                new blooms and fall's exquisite array of colors to winter's  magic and summer's energy, each <br> <br>
-                season abounds with different types of natural beauty to explore and admire For those who <br>
-                may forget what being in nature feels like—this is where these best 
-                 nature quotes come in!<br>
-                 
-              
-             <!--<h4>if you have also good Quality of Pictures then post on your instagram account and tag me as <br>
-                <button type="button"><a href="https://www.instagram.com/nature_and_livinglife/" target="_blank"><h2><i class="fa-brands fa-instagram"></i> nature-and-livinglife</h2> </a></button> <br> <br> </h4>-->
-                  <h3> Everything in nature invites us constantly to be what we are. —Gretel Ehrlich <br> <br>
-                   Nature teaches more than she preaches. There are no sermons in stone. <br>  <br>
-                   It is easier to get a spark out of a stone than a moral. —John Burroughs <br> <br>
-                    The goal of life is living in agreement with nature. —Zeno </h3>
-
-            </h3>
-            <div class="row">
-                <div class="column">
-                    <img src="image/anchor.jpg" style="width:100%"></a>
-                    <h3><p>Morning Time from Ganga's Ghat there <br>
-                    is we are trying to take some perfect pictures</p></h3>
-                </div>
-                <div class="column">
-                    <img src="image/bigsky.jpg"  style="width:100%">
-                    <h3><p>
-                       This Photos taken in ultra wide mode, How it's looking
-                       beutiful cluds in the blue sky
-                    </p></h3>
-                </div>
-                <div class="column">
-                    <img src="image/evening.jpg" style="width:100%">
-                    <h3><p>uff what a busy day! let's take some evening
-                        photos of with tree Sky'</p></h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <img src="image/nightmoon.jpg" style="width:100%">
-                    <h3><p>
-                        Moon looing awesome with clouds in the midnight
-                    </p></h3>
-                </div>
-                <div class="column">
-                    <img src="image/pots-flower.jpg" style="width:100%">
-                    <h3><p>
-                        A flower pots, i'm always trying to take some beutiful pictures with my Camera
-                    </p></h3>
-                </div>
-                <div class="column">
-                    <img src="image/river.jpg" style="width:100%">
-                    <h3><p>
-                        Varuna River in Varanasi (Banaras)...
-                    </p></h3>
-                </div>
-            </div>
+         </div> 
     </div>
+
+
+    <div class="row">
+        <div class="column">
+            <img class="images" src="image/anchor.jpg" >
+            <h3><p>Ganga Ghat in Varanasi (Banaras), in morning time sun rising looking so beutiful, You Must visit
+                 here with your Friends</p></h3>
+            <button class="btn"><a href="image/anchor.jpg" download="Anchor">Download</a></button>
+        </div>
+        <div class="column">
+            <img class="images" src="image/road.jpg" >
+            <h3><p>
+               This is Ring-road in varanasi, looking wonderful and both sides farmers 
+               field growing rice.
+            </p></h3>
+            <button class="btn"><a href="image/road.jpg" download="Ring-Road Highway in varanasi">Download</a></button>
+        </div>
+        <div class="column">
+            <img class="images" src="image/evening.jpg" >
+            <h3><p>I Captured this masterpice image in evening from the forest.
+                This is looking good in your Desktop, if you set as wallaper.
+            </p></h3>
+                <button class="btn"><a href="image/evening.jpg" download="evening captures">Download</a></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <img class="images" src="image/road2.jpg">
+            <h3><p>
+                Today wheather is good, running winds slowly slowly feel this nature, In farmer field road created by nature.
+            </p></h3>
+            <button class="btn"><a href="image/road2.jpg" download="road-by-natures">Download</a></button>
+        </div>
+        <div class="column">
+            <img class="images" src="image/winter-sunrise.jpg" >
+            <h3><p>
+                Sun rising in winter, feeling cold, but I captuyre this image in winter in the month of december in (Ultrawide mode).
+            </p></h3>
+            <button class="btn"><a href="image/winter-sunrise.jpg" download="sun-rising-in-winter">Download</a></button>
+        </div>
+        <div class="column">
+            <img class="images" src="image/river.jpg">
+            <h3><p>
+                It's our Varuna River in Varanasi, In this picture what you can see? I'm seeing a tree near the river 
+                which is the best for me...
+            </p></h3>
+            <button class="btn"><a href="image/river.jpg" download="varuna-river">Download</a></button>
+        </div>
+        <div class="column">
+            <img class="images" src="image/nightmoon.jpg">
+            <h3><p>
+                How is looking more then half moon in the night sky, you can send me message on instagram as 
+                @nature_and_livinglife, or click on the message button
+            </p></h3>
+            <button class="btn"><a href="image/nightmoon.jpg" download="night-moon">Download</a></button>
+        </div>
+        <div class="column">
+            <img class="images" src="image/mirchi.jpg">
+            <h3><p>
+                Puppies drinking milk from their mother.
+            </p></h3>
+            <button class="btn"><a href="image/mirchi.jpg" download="feeding-the-beast">Download</a></button>
+        </div>
+        <div class="column">
+            <img class="images" src="image/manikarnika-ghat.jpg">
+            <h3><p>
+                Varanasi is Spritual Place, This is Manikarnika Ghat in varanasi, this place is also known by there are always pyres(chitaen) burning here
+            </p></h3>
+            <button class="btn"><a href="image/manikarnika-ghat.jpg" download="manikarnika-ghat-in-varanasi">Download</a></button>
+        </div>
+    </div>
+
     <div class="footer"> &copy; 2023 Nature and Livinglife. All rights reserved. || Designed by <a href="https://www.amankumar.tech/">Aman Kumar</a></div>
+
+
 </body>
 </html>
