@@ -59,6 +59,23 @@
     padding: 5px;
   }
   
+  .btn a{
+    font-size: xx-large;
+    font-size: 20px;
+    text-decoration: none;
+    color: cornflowerblue;
+  }
+  .btn{
+    font-weight: bolder;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  .btn:hover{
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: bolder;
+  }
   /* Clear floats after image containers */
   .row::after {
     content: "";
