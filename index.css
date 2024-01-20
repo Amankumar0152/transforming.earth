@@ -173,6 +173,8 @@ td{
   margin: 9px;
 }
 
+
+
 @media only screen and (max-width: 720px) {
     .menu-button {
         cursor: pointer;
