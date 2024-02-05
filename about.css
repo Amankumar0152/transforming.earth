@@ -3,6 +3,31 @@
     margin: 0px;
     box-sizing: border-box;
 }
+.menu-content ul{
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+    list-style: none;
+}
+.menu-content ul li{
+    transition: transform 1.0s ease-out;
+    padding: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.menu-content ul li:hover{
+    transform: scale(1.4);
+}
+.menu-content ul li a{
+    text-decoration: none;
+    color: white;
+}
+.menu-content ul li a:hover{
+    text-decoration: underline;
+    color:#25d366;
+}
 .wrapper{
     background-color: #7192B5;
 }
@@ -14,38 +39,17 @@
     padding-bottom: 15px;
     color: lightyellow;
 }
-.back-arrow{
-    position: absolute;
-    top:10px;
-    left: 19px;
-    font-size: 20px;
-}
-.back-arrow > a{
-    text-decoration: none;
-    color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-}
-.back-arrow > a:hover{
-    opacity: 0.7;
-}
-.top-left > a{
-    position: absolute;
-    top: 19px;
-    left: 19px;
-    margin: 10px;
-    color: crimson;
-}
-.top-left > h1 > a{
+.top-left > h1{
     text-decoration: none;
     color: cornflowerblue;
     padding: 20px 20px;
     padding-top: 10px;
     color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
+    font-family: 'Protest Riot', sans-serif;
+font-family: 'Roboto', sans-serif;
 }
-.top-left > h1 > a:hover{
+.top-left > h1:hover{
     opacity: 0.8;
 }
 .top-left{
@@ -74,12 +78,7 @@
     padding-bottom: 20px;
     color: white;
 }
-.customer > img{
-    width:100%;
-    height: auto;
-    border-radius: 50px;
-    object-fit: cover;
-}
+
 .customer > p{
     font-size:18px ;
     margin: 10px 200px;
@@ -98,6 +97,10 @@
     color:white;
 
 }
+.profile-photo{
+    border-radius: 50%;
+    width: 13%;
+}
 
 .customer > h2> a:hover{
     opacity: 0.7;
@@ -112,10 +115,18 @@
 }
 
 @media only screen and (max-width:1080px){
-    .customer > img{
+    /*.customer > img{
         width:100%;
         height: auto;
         border-radius: 50px;
         object-fit: cover;
+    }*/
+    .profile-photo{
+        border-radius: 50%;
+        width: 35%;
     }
+    .menu-content ul li{
+        font-size: 16px;
+        padding: 7px;
+    }  
 }
