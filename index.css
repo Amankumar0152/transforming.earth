@@ -17,10 +17,12 @@
     font-size: 20px;
 }
 .menu-content ul li a{
+    transition: transform 0.5s ease-in-out ;
     text-decoration: none;
     color: white;
 }
 .menu-content ul li a:hover{
+    transform: scale(1.2);
     text-decoration: underline;
     color: white;
     color:#25d366;
@@ -43,6 +45,7 @@ header h1{
     margin-left: 20px;
     font-size: 20px;
 }
+
 .material-symbols-outlined{
     color: #0096F1;
 }
