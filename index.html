@@ -12,19 +12,24 @@
 </head>
 <body>
     <div class="container">
-         <div class="menu-content"> 
-            <ul>
-                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="connect.html"><i class="fa-solid fa-rss fa-rotate-270"></i> Connect</a></li>
-                <li><a href="gallery.html"><i class="fa-solid fa-image"></i> Gallery</a></li>
-                <li><a href="download.html"><i class="fa-solid fa-cloud-arrow-down"></i> Download</a></li>
-                <li><a href="https://www.instagram.com/nature_and_livinglife/" target="_blank"><i class="fa-brands fa-instagram"></i> instagram</a></li>
-                <li><a href="life.html"><i class="fa-solid fa-heart-pulse"></i> livinglife</a></li>
-                <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
-                <button class="darktheme"><img src="icons8-android-os-48(-mdpi).png" alt=""></button>
-                <!-- <li class="darktheme"><i class="fa-solid fa-moon" style="color: white;"></i></li> -->
-            </ul>
-        </div>
+         <div class="navbar">
+            <div class="menu-content hide"> 
+                <ul id="menuList">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="connect.html"><i class="fa-solid fa-rss fa-rotate-270"></i> Connect</a></li>
+                    <li><a href="gallery.html"><i class="fa-solid fa-image"></i> Gallery</a></li>
+                    <li><a href="download.html"><i class="fa-solid fa-cloud-arrow-down"></i> Download</a></li>
+                    <li><a href="https://www.instagram.com/nature_and_livinglife/" target="_blank"><i class="fa-brands fa-instagram"></i> instagram</a></li>
+                    <li><a href="life.html"><i class="fa-solid fa-heart-pulse"></i> livinglife</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+                    <!-- <button class="darktheme"> <i class="fa-solid fa-sun"></i>  </button> -->
+                    <li class="darktheme"><i class="fa-solid fa-moon fa-xl" style="color: white;"></i></li>
+                    
+                    
+                </ul>
+            </div>
+         </div>
+        <img src="menu.png" class="menu-icon" alt="" onclick="Togglemenu()">
     </div>
 
         <header>
@@ -143,12 +148,11 @@
 
     <div class="footer"> &copy; 2024 Nature and Livinglife. All rights reserved. || Designed by <a href="https://www.amankumar.cloud/">Aman Kumar</a>
 
-        <h4 class="note">NOTE "</>/>" <br>
+        <h4 class="note">NOTE <i class="fa-solid fa-code"></i> <br>
            You can send your best photos for Nature and livinglife.   <br>
             <p>Send here: <a href="mailto:amaghostvilla@gmail.com">amanghostvilla@gmail.com</a></p>
         </h4>
     </div>
-
 
     <script src="dark-theme.js"></script>
 
