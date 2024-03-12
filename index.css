@@ -103,6 +103,9 @@ header h1:hover{
     font-size: 18px;
     padding: 5px 10px;
 }
+.profile h2{
+    padding: 5px;
+}
 .profile h2 h3{
     text-align: center;
 }
