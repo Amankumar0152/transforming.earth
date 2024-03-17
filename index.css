@@ -46,7 +46,7 @@
     color:#25d366;
 }
 .darktheme{
-    padding: 10px;
+    padding: 8px;
     height: 35px;
     width: 70px;
 }
@@ -61,9 +61,7 @@ header h1{
     text-align: center;
     color: #007BFF;
 }
-header h1:hover{
-    color:#25d366;
-}
+
 .profile{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 900;
