@@ -20,16 +20,12 @@
     color: black;
 }
 .darktheme{
-    height: 30px;
-    width: 160px;
+    height: 35px;
+    width: 80px;
 }
-.dark-btn button{
+.dark-btn button img{
     font-size: 16px;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
 }
 .dark-btn button:hover{
     background-color:#25d366;
@@ -279,20 +275,16 @@ th, td{
 
 @media only screen and (max-width: 720px) {
     .navbar ul li{
-        font-size: 14px;
+        font-size: 12px;
         padding: 6px;
     }
     .darktheme{
-        height: 30px;
-        width: 100px;
+        height: 35px;
+        width: 70px;
     }
-    .dark-btn button{
-        font-size: 10px;
+    .dark-btn button img{
+        font-size: 16px;
         text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
     }
     header h1{
         font-size: 20px;
