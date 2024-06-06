@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Profile Embed</title>
+    <style>
+        .instagram-profile {
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            margin: 0 auto;
+        }
+        .instagram-profile img {
+            border-radius: 50%;
+        }
+        .instagram-profile h2 {
+            margin: 10px 0;
+        }
+        .instagram-profile p {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div id="profile" class="instagram-profile"></div>
+
+    <script>
+        const userToken = 'EAAGFE6rTeP8BOyznkiLWBZCeDaG6DZArbA0GcrhVSE9T7dTE1G3GuXBDp7JZBpwuN78gY9sMqigHkEstuynw0AIZAYwz6jpu7UpNmHUZCZAeUm8jaEBsDnsZBRXsZCZApB4vEsqoBAC3SFTglNb6AHCZCu5sUCHNNcVTJviSncPE5AhewDJZC1vt7TvZBtBNVP5zekdsJbQDnJQTqZCSfGQg92w7OvvvSgplVlGzxjDeAiT7T5nia3bCduZBpgIzi8khNjaC1yUQg4HfCLVQQZD'; // Replace with your generated User Token
+        const userId = 'livinglifeearth'; // Replace with your Instagram User ID
+
+        fetch(`https://graph.instagram.com/${userId}?fields=id,username,account_type,media_count,profile_picture_url&access_token=${userToken}`)
+            .then(response => response.json())
+            .then(data => {
+                const profileContainer = document.getElementById('profile');
+                profileContainer.innerHTML = `
+                    <img src="${data.profile_picture_url}" alt="${data.username}" width="100" height="100">
+                    <h2>${data.username}</h2>
+                    <p>Account Type: ${data.account_type}</p>
+                    <p>Posts: ${data.media_count}</p>
+                `;
+            })
+            .catch(error => console.error('Error fetching profile data:', error));
+    </script>
+</body>
+</html>
