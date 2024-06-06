@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Profile Embed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .instagram-profile {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .instagram-profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .instagram-feed {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .instagram-feed div {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="instagram-profile" class="instagram-profile"></div>
+    <div id="instagram-feed" class="instagram-feed"></div>
+
+    <script>
+        const accessToken = 'IGQWRPYjZAuYjlyTW1tN1FYRDN5b1NsdS1hNGJOaWY0d2dqUTljTTJ5U3A1QkxQS3pGbDRsMHZAHdzlOUmNqS2g2UFA4ajVlWENmVzJDMlpRbFpKTlVab1BySlZANNERRT1lnWkZADREJuV1BCOU42Q0h2YkFwbTM1R1EZD';
+        const fields = 'id,username,account_type,media_count,media{caption,media_url}';
+        const url = `https://graph.instagram.com/me?fields=${fields}&access_token=${accessToken}`;
+
+        function removeHashtags(caption) {
+            return caption.replace(/#[a-zA-Z0-9_]+/g, '').trim();
+        }
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const profileDiv = document.getElementById('instagram-profile');
+                profileDiv.innerHTML = `
+                    <h1>${data.username}</h1>
+                    <p>Media Count: ${data.media_count}</p>
+                `;
+                
+                const mediaDiv = document.getElementById('instagram-feed');
+                data.media.data.forEach(media => {
+                    const cleanCaption = removeHashtags(media.caption || '');
+                    const mediaElement = document.createElement('div');
+                    mediaElement.innerHTML = `
+                        <p>${cleanCaption}</p>
+                    `;
+                    mediaDiv.appendChild(mediaElement);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
