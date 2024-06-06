@@ -4,13 +4,6 @@
     box-sizing: border-box;
     font-family:sans-serif;
 }
-.menu-icon{
-    width: 25px;
-    cursor: pointer;
-    display: none;
-    margin: 20px;
-}
-
 .dark{
     background-color: black;
     color: white;
