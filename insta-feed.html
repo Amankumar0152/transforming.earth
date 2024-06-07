@@ -3,61 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Feed</title>
+    <title>Instagram Profile and Feed</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 20px;
         }
-        .instagram-media {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .profile-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-info img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .profile-info p {
+            margin: 0;
+        }
+        .feed-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin: 20px;
         }
         .media-item {
-            background: white;
-            padding: 10px;
             border-radius: 8px;
+            overflow: hidden;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
+            width: calc(33.33% - 20px); /* One-third the width with gap between items */
+            margin-bottom: 20px;
         }
-        .media-item img {
+        .media-item img,
+        .media-item video {
             width: 100%;
-            border-radius: 8px;
+            height: auto;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div id="instagram-media" class="instagram-media"></div>
+    <div class="container">
+        <div class="profile-info" id="profile-info"></div>
+        <div class="feed-container" id="feed-container"></div>
+    </div>
 
     <script>
-        const accessToken = 'IGQWRPYjZAuYjlyTW1tN1FYRDN5b1NsdS1hNGJOaWY0d2dqUTljTTJ5U3A1QkxQS3pGbDRsMHZAHdzlOUmNqS2g2UFA4ajVlWENmVzJDMlpRbFpKTlVab1BySlZANNERRT1lnWkZADREJuV1BCOU42Q0h2YkFwbTM1R1EZD';
-        const fields = 'id,media_type,media_url';
-        const url = `https://graph.instagram.com/me/media?fields=${fields}&access_token=${accessToken}`;
+        const accessToken = 'IGQWRPb0ZAHZA1QtVGgxYm5RSGpQbjQzU1NTaUNPbnZAmeFBhZAzBvOUg3QnUwRDBROFdkcm45MDVUdzRaTmhlTzZAIUjlLZA1VfcFoxRlItT2JpaGNUMHkwZA3lVTG9zdDd0S0hIeE1hQVdFZA1VPeUJzOXVQUEZAETHo1VE0ZD';
+        const profileUrl = `https://graph.instagram.com/me?fields=id,username,profile_picture_url&access_token=${accessToken}`;
+        const mediaUrl = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,thumbnail_url,caption&access_token=${accessToken}`;
 
-        fetch(url)
+        // Fetch profile info
+        fetch(profileUrl)
             .then(response => response.json())
-            .then(data => {
-                const mediaDiv = document.getElementById('instagram-media');
-                data.data.forEach(media => {
+            .then(profileData => {
+                const profileInfo = document.getElementById('profile-info');
+                profileInfo.innerHTML = `
+                    <img src="${profileData.profile_picture_url}" alt="Profile Picture">
+                    <p>@${profileData.username}</p>
+                `;
+            })
+            .catch(error => console.error('Error fetching profile:', error));
+
+        // Fetch feed and reels
+        fetch(mediaUrl)
+            .then(response => response.json())
+            .then(mediaData => {
+                const feedContainer = document.getElementById('feed-container');
+                const mediaItems = mediaData.data;
+
+                mediaItems.forEach(media => {
+                    const mediaItem = document.createElement('div');
+                    mediaItem.className = 'media-item';
+
                     if (media.media_type === 'IMAGE') {
-                        const mediaElement = document.createElement('div');
-                        mediaElement.className = 'media-item';
-                        mediaElement.innerHTML = `<img src="${media.media_url}" alt="Instagram Image">`;
-                        mediaDiv.appendChild(mediaElement);
+                        mediaItem.innerHTML = `<img src="${media.media_url}" alt="${media.caption || 'Instagram Media'}">`;
+                    } else if (media.media_type === 'VIDEO') {
+                        mediaItem.innerHTML = `<video controls><source src="${media.media_url}" type="video/mp4">Your browser does not support the video tag.</video>`;
                     }
+
+                    feedContainer.appendChild(mediaItem);
                 });
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => console.error('Error fetching media:', error));
     </script>
 </body>
 </html>
