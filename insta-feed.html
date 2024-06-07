@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Feed</title>
+    <title>Instagram Feed and Reels Embed</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,87 +11,80 @@
             color: #333;
             margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
+        .instagram-section {
+            margin-bottom: 40px;
+            width: 100%;
         }
         .section-title {
-            margin: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
         }
-        .media-container {
+        .instagram-media {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
         .media-item {
+            background: white;
+            padding: 10px;
             border-radius: 8px;
-            overflow: hidden;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: calc(33.33% - 20px); /* One-third the width with gap between items */
-            margin-bottom: 20px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .media-item img,
         .media-item video {
             width: 100%;
             height: auto;
-            display: block;
-        }
-        @media (max-width: 768px) {
-            .media-item {
-                width: calc(50% - 20px); /* Half the width with gap between items for smaller screens */
-            }
-        }
-        @media (max-width: 480px) {
-            .media-item {
-                width: 100%; /* Full width for very small screens */
-            }
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="section-title">Instagram Feed</h1>
-        <div class="media-container" id="feed-container"></div>
+    <div class="instagram-section">
+        <h2 class="section-title">Instagram Feed</h2>
+        <div id="instagram-feed" class="instagram-media"></div>
+    </div>
+
+    <div class="instagram-section">
+        <h2 class="section-title">Instagram Reels</h2>
+        <div id="instagram-reels" class="instagram-media"></div>
     </div>
 
     <script>
-        const accessToken = 'IGQWROU3BHTWJMby16YzFRNEU2ZAktXWEd1N0ZAfNVppandWdUVVTEI5cEFfRzd0NnhRWjFJUlhDQURiVFI5OUpDak1KOWVYczUybFNpc0dYLU1UN1J2dUVLa25IUW8zT19ycExXaU5iUWVnSnlvclRPWEpuazdaaTgZD'; // Replace with your actual Instagram API token
-        const fields = 'media_type,media_url,thumbnail_url,caption';
+        const accessToken = 'IGQWROU3BHTWJMby16YzFRNEU2ZAktXWEd1N0ZAfNVppandWdUVVTEI5cEFfRzd0NnhRWjFJUlhDQURiVFI5OUpDak1KOWVYczUybFNpc0dYLU1UN1J2dUVLa25IUW8zT19ycExXaU5iUWVnSnlvclRPWEpuazdaaTgZD';
+        const fields = 'media_type,media_url,caption';
         const url = `https://graph.instagram.com/me/media?fields=${fields}&access_token=${accessToken}`;
 
-        const fetchMedia = () => {
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    const feedContainer = document.getElementById('feed-container');
-                    feedContainer.innerHTML = ''; // Clear previous content
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const feedDiv = document.getElementById('instagram-feed');
+                const reelsDiv = document.getElementById('instagram-reels');
 
-                    const mediaItems = data.data.slice(0, 4); // Display the last 3 or 4 media items
+                data.data.forEach(media => {
+                    const mediaElement = document.createElement('div');
+                    mediaElement.className = 'media-item';
 
-                    mediaItems.forEach(media => {
-                        const mediaItem = document.createElement('div');
-                        mediaItem.className = 'media-item';
-
-                        if (media.media_type === 'IMAGE') {
-                            mediaItem.innerHTML = `<img src="${media.media_url}" alt="${media.caption || 'Instagram Media'}">`;
-                        } else if (media.media_type === 'VIDEO') {
-                            mediaItem.innerHTML = `<video controls><source src="${media.media_url}" type="video/mp4">Your browser does not support the video tag.</video>`;
-                        }
-
-                        feedContainer.appendChild(mediaItem);
-                    });
-                })
-                .catch(error => console.error('Error fetching media:', error));
-        };
-
-        // Fetch media initially
-        fetchMedia();
-
-        // Refresh media every 5 minutes to update with new posts
-        setInterval(fetchMedia, 300000); // 300000 milliseconds = 5 minutes
+                    if (media.media_type === 'IMAGE') {
+                        mediaElement.innerHTML = `<img src="${media.media_url}" alt="${media.caption || 'Instagram Media'}">`;
+                        feedDiv.appendChild(mediaElement);
+                    } else if (media.media_type === 'VIDEO') {
+                        mediaElement.innerHTML = `<video controls><source src="${media.media_url}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                        reelsDiv.appendChild(mediaElement);
+                    }
+                });
+            })
+            .catch(error => console.error('Error:', error));
     </script>
 </body>
 </html>
