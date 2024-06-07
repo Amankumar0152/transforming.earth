@@ -13,6 +13,7 @@ function getInstagramFeed() {
                 postLink.href = post.permalink;
                 postLink.target = '_blank';
 
+                
                 const postImage = document.createElement('img');
                 postImage.src = post.media_url;
                 postImage.alt = post.caption;

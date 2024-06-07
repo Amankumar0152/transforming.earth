@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Profile and Feed</title>
+    <title>Instagram Feed</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,22 +15,12 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-        .profile-info {
             text-align: center;
-            margin-bottom: 20px;
         }
-        .profile-info img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 10px;
+        .section-title {
+            margin: 20px 0;
         }
-        .profile-info p {
-            margin: 0;
-        }
-        .feed-container {
+        .media-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -49,52 +39,59 @@
             height: auto;
             display: block;
         }
+        @media (max-width: 768px) {
+            .media-item {
+                width: calc(50% - 20px); /* Half the width with gap between items for smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .media-item {
+                width: 100%; /* Full width for very small screens */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="profile-info" id="profile-info"></div>
-        <div class="feed-container" id="feed-container"></div>
+        <h1 class="section-title">Instagram Feed</h1>
+        <div class="media-container" id="feed-container"></div>
     </div>
 
     <script>
-        const accessToken = 'IGQWRPb0ZAHZA1QtVGgxYm5RSGpQbjQzU1NTaUNPbnZAmeFBhZAzBvOUg3QnUwRDBROFdkcm45MDVUdzRaTmhlTzZAIUjlLZA1VfcFoxRlItT2JpaGNUMHkwZA3lVTG9zdDd0S0hIeE1hQVdFZA1VPeUJzOXVQUEZAETHo1VE0ZD';
-        const profileUrl = `https://graph.instagram.com/me?fields=id,username,profile_picture_url&access_token=${accessToken}`;
-        const mediaUrl = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,thumbnail_url,caption&access_token=${accessToken}`;
+        const accessToken = 'IGQWROU3BHTWJMby16YzFRNEU2ZAktXWEd1N0ZAfNVppandWdUVVTEI5cEFfRzd0NnhRWjFJUlhDQURiVFI5OUpDak1KOWVYczUybFNpc0dYLU1UN1J2dUVLa25IUW8zT19ycExXaU5iUWVnSnlvclRPWEpuazdaaTgZD'; // Replace with your actual Instagram API token
+        const fields = 'media_type,media_url,thumbnail_url,caption';
+        const url = `https://graph.instagram.com/me/media?fields=${fields}&access_token=${accessToken}`;
 
-        // Fetch profile info
-        fetch(profileUrl)
-            .then(response => response.json())
-            .then(profileData => {
-                const profileInfo = document.getElementById('profile-info');
-                profileInfo.innerHTML = `
-                    <img src="${profileData.profile_picture_url}" alt="Profile Picture">
-                    <p>@${profileData.username}</p>
-                `;
-            })
-            .catch(error => console.error('Error fetching profile:', error));
+        const fetchMedia = () => {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const feedContainer = document.getElementById('feed-container');
+                    feedContainer.innerHTML = ''; // Clear previous content
 
-        // Fetch feed and reels
-        fetch(mediaUrl)
-            .then(response => response.json())
-            .then(mediaData => {
-                const feedContainer = document.getElementById('feed-container');
-                const mediaItems = mediaData.data;
+                    const mediaItems = data.data.slice(0, 4); // Display the last 3 or 4 media items
 
-                mediaItems.forEach(media => {
-                    const mediaItem = document.createElement('div');
-                    mediaItem.className = 'media-item';
+                    mediaItems.forEach(media => {
+                        const mediaItem = document.createElement('div');
+                        mediaItem.className = 'media-item';
 
-                    if (media.media_type === 'IMAGE') {
-                        mediaItem.innerHTML = `<img src="${media.media_url}" alt="${media.caption || 'Instagram Media'}">`;
-                    } else if (media.media_type === 'VIDEO') {
-                        mediaItem.innerHTML = `<video controls><source src="${media.media_url}" type="video/mp4">Your browser does not support the video tag.</video>`;
-                    }
+                        if (media.media_type === 'IMAGE') {
+                            mediaItem.innerHTML = `<img src="${media.media_url}" alt="${media.caption || 'Instagram Media'}">`;
+                        } else if (media.media_type === 'VIDEO') {
+                            mediaItem.innerHTML = `<video controls><source src="${media.media_url}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                        }
 
-                    feedContainer.appendChild(mediaItem);
-                });
-            })
-            .catch(error => console.error('Error fetching media:', error));
+                        feedContainer.appendChild(mediaItem);
+                    });
+                })
+                .catch(error => console.error('Error fetching media:', error));
+        };
+
+        // Fetch media initially
+        fetchMedia();
+
+        // Refresh media every 5 minutes to update with new posts
+        setInterval(fetchMedia, 300000); // 300000 milliseconds = 5 minutes
     </script>
 </body>
 </html>
