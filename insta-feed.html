@@ -1,90 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Feed and Reels Embed</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+	<title>Instagram Photos</title>
+	<style type="text/css">
+		a img{ 
+			width: 25%;
+		}
+        h1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
-        .instagram-section {
-            margin-bottom: 40px;
-            width: 100%;
+        @media only screen and (max-width: 720px){
+            a img{
+                width: 100%;
+            }
         }
-        .section-title {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-        .instagram-media {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .media-item {
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 200px;
-            height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .media-item img,
-        .media-item video {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-    </style>
+	</style>
 </head>
 <body>
-    <div class="instagram-section">
-        <h2 class="section-title">Instagram Feed</h2>
-        <div id="instagram-feed" class="instagram-media"></div>
-    </div>
+	<h1 style="text-align: center">from Instagram </h1>
+    	<div id="instafeed-container"></div>
 
-    <div class="instagram-section">
-        <h2 class="section-title">Instagram Reels</h2>
-        <div id="instagram-reels" class="instagram-media"></div>
-    </div>
 
-    <script>
-        const accessToken = 'IGQWROU3BHTWJMby16YzFRNEU2ZAktXWEd1N0ZAfNVppandWdUVVTEI5cEFfRzd0NnhRWjFJUlhDQURiVFI5OUpDak1KOWVYczUybFNpc0dYLU1UN1J2dUVLa25IUW8zT19ycExXaU5iUWVnSnlvclRPWEpuazdaaTgZD';
-        const fields = 'media_type,media_url,caption';
-        const url = `https://graph.instagram.com/me/media?fields=${fields}&access_token=${accessToken}`;
 
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                const feedDiv = document.getElementById('instagram-feed');
-                const reelsDiv = document.getElementById('instagram-reels');
-
-                data.data.forEach(media => {
-                    const mediaElement = document.createElement('div');
-                    mediaElement.className = 'media-item';
-
-                    if (media.media_type === 'IMAGE') {
-                        mediaElement.innerHTML = `<img src="${media.media_url}" alt="${media.caption || 'Instagram Media'}">`;
-                        feedDiv.appendChild(mediaElement);
-                    } else if (media.media_type === 'VIDEO') {
-                        mediaElement.innerHTML = `<video controls><source src="${media.media_url}" type="video/mp4">Your browser does not support the video tag.</video>`;
-                        reelsDiv.appendChild(mediaElement);
-                    }
-                });
-            })
-            .catch(error => console.error('Error:', error));
-    </script>
+	<script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
+	<script type="text/javascript">
+	var userFeed = new Instafeed({
+		get: 'user',
+		target: "instafeed-container",
+    	resolution: 'low_resolution',
+		accessToken: 'IGQWROU3BHTWJMby16YzFRNEU2ZAktXWEd1N0ZAfNVppandWdUVVTEI5cEFfRzd0NnhRWjFJUlhDQURiVFI5OUpDak1KOWVYczUybFNpc0dYLU1UN1J2dUVLa25IUW8zT19ycExXaU5iUWVnSnlvclRPWEpuazdaaTgZD'
+	});
+	userFeed.run();
+	</script>
 </body>
 </html>
