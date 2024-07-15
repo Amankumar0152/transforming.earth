@@ -49,9 +49,6 @@
     font-family: 'Protest Riot', sans-serif;
 font-family: 'Roboto', sans-serif;
 }
-.top-left > h1:hover{
-    color: lightgreen;
-}
 .top-left{
     padding-top: 45px;
 }
