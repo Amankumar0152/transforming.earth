@@ -78,9 +78,9 @@ ul{
 	color: #24262b;
 	background-color: #ffffff;
 }
-.footer-col p{
-	font-size: 12px;
-	color: #bbbbbb;
+.copyright{
+	color: whitesmoke;
+	font-size:12px;
 }
 
 /*responsive*/
