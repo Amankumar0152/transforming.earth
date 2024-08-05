@@ -3,157 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>livinglife.earth</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="image/sun-profile.png">
-    <script src="https://kit.fontawesome.com/2917500283.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Transforming Earth</title>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <nav>
-        <input type="checkbox" id="sidebar-active">
-        <label for="sidebar-active" class="open-sidebar-button">
-          <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-        </label>
-        <label id="overlay" for="sidebar-active"></label>
-        <div class="links-container">
-          <label for="sidebar-active" class="close-sidebar-button">
-            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-          </label>
-
-          <!-- NOT IN TUTORIAL: The <a> tags are linked to the subpages -->
-            <a class="home-link" href="index.html">Home</a>
-          <a href="about.html">Connect</a> 
-          <a href="gallery.html">Gallery</a>
-          <a href="download.html">Download</a>
-          <a href="life.html">Quotes</a>
-          <a href="insta-feed.html">Instagram</a>
-          <a href="about.html">About</a>
+        <div class="logo">
+            <h1>Transforming Earth</h1>
         </div>
-      </nav>
+        <ul id="menuList">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Product</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
 
-      <!-- <div class="dark-btn">
-            <button class="darktheme"> <img src="sunIcon/Sun32.png" alt="Sun"</button>
-        </div> -->
-        <header>
-            <h1 id="earth">Livinglife On Earth<span class="material-symbols-outlined"></span></h1>
-        </header>
-
-        <div class="profile">    
-            <img class="profile-photo" src="image/sunflower-profile.jpg" alt="sun-flower-image">
-            <h2>Aman Kumar</h2>
-            <h3>Photographer</h3>
-            <p>what a busy day! let's take some outside pictures like River, Forest, trees, mountains, animals, blue sky, 
-                capture everything what you can see.....
+    <div class="container">
+        <div class="image-container">
+            <img src="image/river.jpg" alt="Transforming Earth" class="transition-image">
+        </div>
+        <div class="content">
+            <h1><span class="tree">Our Earth need 1 billion tree to stop Global warming.</span></h1>
+            <p>
+                Our Earth desperately needs more trees to combat global warming. Trees absorb carbon dioxide, 
+                one of the primary greenhouse gases, and release oxygen. Planting trees is one of the most effective 
+                ways to reduce the carbon footprint and mitigate the effects of climate change. Join us in our mission 
+                to plant more trees and create a sustainable future.
             </p>
-            <p>Nothing compares to nature's beauty, as these famous quotes about nature agree From spring's hopeful
-                new blooms and fall's exquisite array of colors to winter's magic and summer's energy.</p>
-                <p>
-                    Everything in nature invites us constantly to be what we are. <span class="spn">—Gretel Ehrlich</span>
-
-                       Nature teaches more than she preaches. There are no sermons in stone.
-
-                          It is easier to get a spark out of a stone than a moral. <span class="spn">—John Burroughs</span>
-
-                            The goal of life is living in agreement with nature. <span class="spn">—Zeno</span>
-                </p>
-            <table>
-                <th>176</th>
-                <th>2.7M</th>
-                <th>614</th>
-
-                <tr>
-                    <td>Posts</td>
-                    <td>Followers</td>
-                    <td>Following</td>
-                </tr>
-            </table>
-            <div class="buttons">
-                   <button class="follow-button"><a href="https://www.instagram.com/nature_and_livinglife/" target="_blank">Follow</a></button>
-                   <button class="message-button"><a href="https://www.instagram.com/nature_and_livinglife/" target="_blank">Message</a></button>
-                   <button class="call-button"><a href="https://www.instagram.com/nature_and_livinglife/">Call</a></button>                   
+        </div>
+        <div class="full-width-image-container">
+            <!-- <img src="image/river.jpg" alt="Nature" class="full-width-image"> -->
+        </div>
+        <div class="articles-info">
+            <h2>Tree Planting and Environmental Conservation</h2>
+        </div>
+        <div class="articles">
+            <div class="article">
+                <img src="image/sunset.jpg" alt="sunset">
+                <h2><a href="article1.html">The Importance of Reforestation</a></h2>
+                <p>Learn why reforestation is crucial for our environment and how it helps combat global warming.</p>
             </div>
-         </div> 
-    </div>
+            <div class="article">
+                <img src="image/plant.jpg" alt="river">
+                <h2><a href="article2.html">How much Trees Need to Stop Global Warming ?</a></h2>
+                <p>Join us in our mission to plant more trees and create a sustainable future.</p>
+            </div>
+            
+            <div class="article">
+                <img src="image/pink-sky.jpg" alt="the-pinksky">
+                <h2><a href="article3.html">Community Efforts in Tree Planting</a></h2>
+                <p>Find out how communities worldwide are coming together to plant trees and make a difference.</p>
+            </div>
 
-    <div class="row">
-        <div class="column">
-            <img class="images" src="image/anchor.jpg" >
-            <h3><p>Ganga Ghat in Varanasi (Banaras), in morning time sun rising looking so beutiful</p></h3>
-            <button class="btn"><a href="image/anchor.jpg" download="Anchor">Download <i class="fa-solid fa-download"></i></a></button>
-        </div>
-        <div class="column">
-            <img class="images" src="image/road.jpg" >
-            <h3><p>
-               This is Ring-road in varanasi, looking wonderful and both sides farmers 
-               field growing rice.
-            </p></h3>
-            <button class="btn"><a href="image/road.jpg" download="Ring-Road Highway in varanasi">Download <i class="fa-solid fa-download"></i></a></button>
-        </div>
-        <div class="column">
-            <img class="images" src="image/evening.jpg" >
-            <h3><p>I Captured this masterpice image in evening from the forest.
-                This is looking good in your Desktop, if you set as background.
-            </p></h3>
-                <button class="btn"><a href="image/evening.jpg" download="evening captures">Download <i class="fa-solid fa-download"></i></a></button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="column">
-            <img class="images" src="image/road2.jpg">
-            <h3><p>
-                Today wheather is good, running winds slowly slowly feel this nature, In farmer field road created by nature.
-            </p></h3>
-            <button class="btn"><a href="image/road2.jpg" download="road-by-natures">Download <i class="fa-solid fa-download"></i></a></button>
-        </div>
-        <div class="column">
-            <img class="images" src="image/winter-sunrise.jpg" >
-            <h3><p>
-                Sun rising in winter, feeling cold, but I captuyre this image in winter in the month of december in (Ultrawide mode).
-            </p></h3>
-            <button class="btn"><a href="image/winter-sunrise.jpg" download="sun-rising-in-winter">Download <i class="fa-solid fa-download"></i></a></button>
-        </div>
-        <div class="column">
-            <img class="images" src="image/river.jpg">
-            <h3><p>
-                It's our Varuna River in Varanasi, In this picture what you can see? I'm seeing a tree near the river 
-                which is the best for me...
-            </p></h3>
-            <button class="btn"><a href="image/river.jpg" download="varuna-river">Download <i class="fa-solid fa-download"></i></a></button>
-        </div>
-        <div class="column">
-            <img class="images" src="image/nightmoon.jpg">
-            <h3><p>
-                How is looking more then half moon in the night sky...
-            </p></h3>
-            <button class="btn"><a href="image/nightmoon.jpg" download="night-moon">Download <i class="fa-solid fa-download"></i></a></button>
-        </div>
-        <div class="column">
-            <img class="images" src="image/mirchi.jpg">
-            <h3><p>
-                Puppies are happy.
-            </p></h3>
-            <button class="btn"><a href="image/mirchi.jpg" download="feeding-the-beast">Download <i class="fa-solid fa-download"></i></a></button>
-        </div>
-        <div class="column">
-            <img class="images" src="image/manikarnika-ghat.jpg">
-            <h3><p>
-                This is Manikarnika Ghat in varanasi, this place is also known by there are always pyres(chitaen) burning here
-            </p></h3>
-            <button class="btn"><a href="image/manikarnika-ghat.jpg" download="manikarnika-ghat-in-varanasi">Download <i class="fa-solid fa-download"></i></a></button>
+            <div class="article">
+                <img src="image/bigsky.jpg" alt="ecosystem">
+                <h2><a href="article4.html">How Trees Help the Ecosystem</a></h2>
+                <p>Discover the various benefits trees provide to our ecosystem, from soil conservation to biodiversity.</p>
+            </div> 
+            <div class="article">
+                <img src="image/messy-river.jpg" alt="messy-river">
+                <h2><a href="article5.html">Industrial Pollution in Rivers: A Comprehensive Approach</a></h2>
+                <p>Discover the various benefits trees provide to our ecosystem, from soil conservation to biodiversity.</p>
+            </div>
+            <div class="article">
+                <img src="image/sunflower.jpg" alt="Sun-flowers">
+                <h2><a href="article6.html">What you know about Sunflower?</a></h2>
+                <p>sunflower, known for its large, yellow petals and distinctive central disk.</p>
+            </div>
         </div>
     </div>
 
-    <div class="footer"> &copy; 2024 Nature and Livinglife. All rights reserved.
-         || Designed by <a href="https://www.amankumar.cloud/">Aman Kumar</a>
-        <p>You can send Your Best Photos for Nature and Livinglife <a href="mailto:amanghostvilla@gmail.com">amanghostvilla@gmail.com</a></p>
-        <h3><a href="about.html"><i class="fa-solid fa-headset"></i> Contact Us </a>for more info</h3>
-    </div>
-   
-    <iframe src="https://widget.taggbox.com/158641" style="width:100%;height:600px;border:none;"></iframe>
-    
-    <script src="js/dark-theme.js"></script>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Earth need</h4>
+                    <ul>
+                        <li><a href="#">more Tree</a></li>
+                        <li><a href="#">Clean rivers</a></li>
+                        <li><a href="article2.html">1M Tree</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect-Us</h4>
+                    <ul>
+                        <li><a href="#">Join-us</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>T&C</h4>
+                    <ul>
+                        <li><a href="#">Terms of use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/livinglifeearth"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
 
 
+    <script src="js/pages.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 </html>
