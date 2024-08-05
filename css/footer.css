@@ -89,9 +89,6 @@ ul{
     width: 50%;
     margin-bottom: 30px;
 }
-.footer-col p{
-	color: #bbbbbb;
-}
 }
 @media(max-width: 574px){
   .footer-col{
