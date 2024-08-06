@@ -40,7 +40,7 @@ ul{
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #e91e63;
+	background-color: greenyellow;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -76,11 +76,16 @@ ul{
 }
 .footer-col .social-links a:hover{
 	color: #24262b;
-	background-color: #ffffff;
+	background-color: greenyellow;
 }
 .copyright{
 	color: whitesmoke;
 	font-size:12px;
+}
+.footer-col img{
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
 /*responsive*/
