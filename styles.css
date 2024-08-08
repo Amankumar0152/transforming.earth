@@ -30,7 +30,7 @@ a:active {
 
 .transition-image {
   width: 100%;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s ease-in-out;
 }
 
