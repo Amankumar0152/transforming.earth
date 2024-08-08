@@ -18,7 +18,6 @@ a:hover {
 a:active {
   color: red;
 }
-
 .container {
   width: 90%;
   margin: 0 auto;
@@ -96,44 +95,6 @@ a:active {
   transform: scale(1.05);
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.pagination button {
-  padding: 10px 20px;
-  margin: 0 10px;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.pagination button:hover {
-  background-color: #45a049;
-}
-
-.page-numbers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.page-numbers span {
-  padding: 10px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.page-numbers span:hover {
-  background-color: #ddd;
-}
-
 @media (max-width: 768px) {
   .article {
       flex: 1 1 100%;
@@ -144,25 +105,5 @@ a:active {
   }
   .article img {
     width: 100%;
-  }
-}
-
-@media (max-width: 520px) {
-  .page-numbers {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .page-numbers span {
-    padding: 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .page-numbers span {
-    padding: 5px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s;
   }
 }
