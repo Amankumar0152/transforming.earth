@@ -18,6 +18,10 @@ a:hover {
 a:active {
     color: red;
 }
+.highlight{
+    color: white;
+    background-color: green;
+}
 
 .container {
     width: 80%;
