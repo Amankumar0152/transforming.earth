@@ -5,19 +5,20 @@ body {
     background-color: #f4f4f4;
 }
 a {
-    color: black;
+    color: cornflowerblue;
     text-decoration: none;
-}
-
-/* Style for the link when hovered */
-a:hover {
+  }
+  
+  /* Style for the link when hovered */
+  a:hover {
     color: green;
-}
-
-/* Style for the link when clicked (active state) */
-a:active {
+    text-decoration: underline;
+  }
+  
+  /* Style for the link when clicked (active state) */
+  a:active {
     color: red;
-}
+  }
 .highlight{
     color: white;
     background-color: green;
