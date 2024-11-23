@@ -1,7 +1,7 @@
 <?php
 
 // Define your secret key
-$secretKey = '0x4AAAAAAA0CA_HLQDWYBKjLHjfIdNe1IPM';
+// $secretKey = '0x4AAAAAAA0CA_HLQDWYBKjLHjfIdNe1IPM';
 
 // Get response token from the form
 $responseToken = $_POST['cf-turnstile-response'];
