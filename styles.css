@@ -4,9 +4,6 @@ body {
   padding: 0;
   background-color: #f4f4f4;
 }
-.logo{
-  user-select: none;
-}
 a {
   color: cornflowerblue;
   text-decoration: none;
@@ -20,7 +17,7 @@ a:hover {
 
 /* Style for the link when clicked (active state) */
 a:active {
-  color: red;
+  color: lightslategray;
 }
 .container {
   width: 90%;
