@@ -23,6 +23,9 @@ nav{
 .logo{
     color: #fff;
 }
+.logo a{
+    color: #ffffff;
+}
 
 nav ul{
     display: flex;
