@@ -9,16 +9,7 @@ a {
     text-decoration: none;
   }
   
-  /* Style for the link when hovered */
-  a:hover {
-    color: green;
-    text-decoration: underline;
-  }
   
-  /* Style for the link when clicked (active state) */
-  a:active {
-    color: red;
-  }
 .highlight{
     color: white;
     background-color: green;
