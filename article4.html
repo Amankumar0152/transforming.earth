@@ -19,6 +19,7 @@
     </style>
 </head>
 <body>
+  <div include-html="components/navbar.html"></div>
     <nav>
         <div class="logo">
             <h1><a href="index.html">Transforming Earth</a></h1>
@@ -168,5 +169,31 @@
             </div>
         </div>
    </footer>
+  <div include-html="components/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+  includeHTML(() => {
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    if (mobileMenu && navLinks) {
+      mobileMenu.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        document.body.style.overflow = navLinks.classList.contains("active") ? "hidden" : "";
+      });
+
+      document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("active");
+          navLinks.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+      });
+    }
+  });
+</script>
+
 </body>
 </html>

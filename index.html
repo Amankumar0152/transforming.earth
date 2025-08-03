@@ -33,31 +33,7 @@
     </style>
 </head>
 <body>
-      <!-- navbar -->
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="icons/tree.png" alt="Earth Icon">
-            Transforming Earth
-        </a>
-
-        <div class="menu-toggle" id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">Articles</a></li>
-            <li><a href="#">Wallpapers</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="legal/terms.html">Terms & Conditions</a></li>
-        </ul>
-    </nav>
-
+     <div include-html="components/navbar.html"></div>
 
     <div class="container">
         <div class="image-container">
@@ -162,51 +138,14 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>Earth need</h4>
-                    <ul>
-                        <li><a href="article2.html">Need 1B tree</a></li>
-                        <li><a href="#">Support Reforestation</a></li>
-                        <li><a href="#">Heal the Planet</a></li>
-                        <li><a href="#">Green Future Planning</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Transforming earth</h4>
-                    <ul>
-                        <li><a href="#c">Tree Campaign</a></li>
-                        <li><a href="#c">Join the Green Mission</a></li>
-                        <li><a href="#">Free Wallpaper</a></li>
-                        <li><a href="#">Tree by Tree</a></li>
-                        <li><a href="#">Earth First</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Connect-us</h4>
-                    <ul>
-                        <li><a href="terms-privacy/about.html">About</a></li>
-                        <li><a href="form/form.html">Contact-Us</a></li>
-                        <li><a href="terms-privacy/terms.html" target="_blank">Terms of use <i class="fa-solid fa-up-right-from-square"></i></a></li>
-                        <li><a href="terms-privacy/privacy-policy.html" target="_blank">Privacy Policy <i class="fa-solid fa-up-right-from-square"></i></a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>follow us</h4>
-                    <div class="social-links">
-                        <a href="https://www.amankumarcoding.space/"><i class="fa-solid fa-earth-asia"></i></a>
-                        <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/transformings.earth/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/1UuXHveyaj/" target="_blank"><i class="fab fa-facebook-f"></i></a>   
-                    </div>
-                    <p class="copyright">© 2025 Transforming Earth. All rights reserved.</p>
-                    <div class="tree"><img src="icons/tree.png" alt="icons Tree"></div>
-                </div>
-            </div>
-        </div>
-   </footer>
-    <script src="js/navbar.js"></script>
+    <div include-html="components/footer.html"></div>
+    <script src="js/include.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    const script = document.createElement("script");
+    script.src = "js/navbar.js";
+    document.body.appendChild(script);
+  });
+</script>
 </body>
 </html>
