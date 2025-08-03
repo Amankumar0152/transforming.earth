@@ -8,7 +8,9 @@ a {
   color: cornflowerblue;
   text-decoration: none;
 }
-
+a:hover{
+  text-decoration: underline;
+}
 /* Style for the link when clicked (active state) */
 a:active {
   color: lightslategray;
