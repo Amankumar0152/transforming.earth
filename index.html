@@ -24,6 +24,7 @@
     <meta name="twitter:title" content="Transforming Earth Plant Trees">
     <meta name="twitter:description" content="Earth is our only home, a vibrant planet filled with diverse ecosystems and life. Protecting and nurturing Earth ensures a healthy environment for current and future generations. Join us in making a positive impact for our planet.">
     <meta name="twitter:image" content="https://livinglife.pages.dev/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         ::selection{
              background-color: green;
@@ -34,18 +35,26 @@
 <body>
       <!-- navbar -->
     <nav>
-        <div class="logo">
-            <h1><a href="index.html">Transforming Earth</a></h1>
+        <a href="#" class="logo">
+            <img src="icons/tree.png" alt="Earth Icon">
+            Transforming Earth
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <ul id="menuList">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Plant Trees</a></li>
-            <li><a href="terms-privacy/about.html">About</a></li>
-            <li><a href="#">Contact-Us</a></li>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Wallpapers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
         </ul>
-        <div class="menu-icon">
-            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
-        </div>
     </nav>
 
 
