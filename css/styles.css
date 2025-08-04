@@ -16,13 +16,12 @@ a:active {
   color: lightslategray;
 }
 .container {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 
 .image-container {
   text-align: center;
-  margin: 3px;
 }
 .transition-image {
   width: 100%;
