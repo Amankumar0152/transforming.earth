@@ -31,12 +31,18 @@
         </ul>
     </nav>
 
-    <script>
-  // Create a link element for favicon
-  const favicon = document.createElement('link');
-  favicon.rel = 'icon';
-  favicon.href = '/icons/tree.png';
-  document.head.appendChild(favicon);
+   <script>
+  fetch("/components/navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.querySelector("header").innerHTML = data;
+
+      // ✅ Inject favicon after navbar loads
+      const link = document.createElement("link");
+      link.rel = "icon";
+      link.href = "/icons/tree.png";
+      document.head.appendChild(link);
+    });
 </script>
 
 </body>
