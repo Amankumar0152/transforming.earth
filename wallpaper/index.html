@@ -1,22 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Wallpaper Preview</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wallpaper Gallery</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 15px;
+      text-align: center;
+      color: #fff;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: pointer;
+    }
+
+    .card-footer {
+      padding: 10px 15px;
+      text-align: center;
+      background-color: #fafafa;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: #007BFF;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 500px) {
+      header {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <h2>Sunset Wallpaper Preview</h2>
-  
-  <!-- Image -->
-  <img src="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" alt="Sunset Wallpaper" width="300">
+<header>
+  Terrapix.com
+</header>
 
-  <br><br>
+<div class="gallery">
+  <!-- Wallpaper 1 -->
+  <div class="card">
+    <a href="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" alt="Sunset Wallpaper" />
+    </a>
+    <div class="card-footer">
+      <a class="download-btn" href="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" download="sunset.webp">
+        Download
+      </a>
+    </div>
+  </div>
 
-  <!-- Download Button -->
-  <a href="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" download="sunset.webp">
-    <button>Download Wallpaper</button>
-  </a>
+  <!-- Add more wallpapers like this -->
+  <div class="card">
+    <a href="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/mobile/sunset.webp" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/mobile/sunset.webp" alt="Mobile Sunset Wallpaper" />
+    </a>
+    <div class="card-footer">
+      <a class="download-btn" href="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/mobile/sunset.webp" download="mobile-sunset.webp">
+        Download
+      </a>
+    </div>
+  </div>
+
+</div>
 
 </body>
 </html>
