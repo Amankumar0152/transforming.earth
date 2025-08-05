@@ -8,6 +8,7 @@
     <title>Transforming Earth - Home </title>
     <script src="https://kit.fontawesome.com/2917500283.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     <meta name="theme-color" content="#2C3E50">
     <link rel="icon" href="icons/tree.png">
     <!-- Open Graph Meta Tags -->
@@ -31,7 +32,30 @@
     </style>
 </head>
 <body>
-     <div include-html="components/navbar.html"></div>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="/icons/tree.png" alt="Earth Icon">
+            Transforming Earth
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about/about.html">About</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Wallpapers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="/connect/contact.html">Contact</a></li>
+            <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/legal/terms.html">Terms & Conditions</a></li>
+        </ul>
+    </nav>
 
     <div class="container">
         <div class="image-container">
