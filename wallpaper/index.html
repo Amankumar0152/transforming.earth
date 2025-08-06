@@ -2,63 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Terrapix.com</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wallpaper Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      display: block;
+      cursor: pointer;
+    }
+    .card-footer {
+      padding: 10px;
+      background: #fafafa;
+    }
+    .download-btn {
+      background: #007bff;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+    .download-btn:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
-<div include-html="components/navbar.html"></div>
 
-<header>
-  Terrapix.com
-</header>
+<header>Wallpaper Gallery</header>
+
 <div class="gallery">
   <!-- Wallpaper 1 -->
   <div class="card">
-    <a href="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" alt="Sunset Wallpaper" />
-    </a>
+    <img src="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" alt="Sunset Wallpaper" />
     <div class="card-footer">
-      <a class="download-btn" href="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" download="sunset.webp">
+      <button class="download-btn" onclick="downloadImage('https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.jpg', 'sunset.jpg')">
         Download
-      </a>
+      </button>
     </div>
   </div>
 
-  <!-- Add more wallpapers like this -->
+  <!-- Wallpaper 2 -->
   <div class="card">
-    <a href="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/mobile/sunset.webp" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/mobile/sunset.webp" alt="Mobile Sunset Wallpaper" />
-    </a>
+    <img src="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" alt="Wallpaper 2" />
     <div class="card-footer">
-      <a class="download-btn" href="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/mobile/sunset.webp" download="mobile-sunset.webp">
+      <button class="download-btn" onclick="downloadImage('https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.jpg', 'wallpaper2.jpg')">
         Download
-      </a>
+      </button>
     </div>
   </div>
+
+  <!-- Add more wallpapers below -->
 </div>
-<script src="js/include.js"></script>
+
 <script>
-  includeHTML(() => {
-    const mobileMenu = document.getElementById("mobile-menu");
-    const navLinks = document.getElementById("nav-links");
-
-    if (mobileMenu && navLinks) {
-      mobileMenu.addEventListener("click", () => {
-        mobileMenu.classList.toggle("active");
-        navLinks.classList.toggle("active");
-        document.body.style.overflow = navLinks.classList.contains("active") ? "hidden" : "";
-      });
-
-      document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.remove("active");
-          navLinks.classList.remove("active");
-          document.body.style.overflow = "";
-        });
-      });
-    }
-  });
+function downloadImage(url, filename) {
+  fetch(url)
+    .then(response => response.blob())
+    .then(blob => {
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    })
+    .catch(() => alert('Failed to download image.'));
+}
 </script>
+
 </body>
 </html>
