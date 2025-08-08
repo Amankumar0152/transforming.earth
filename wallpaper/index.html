@@ -20,8 +20,10 @@
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .card {
       background: #fff;
@@ -36,21 +38,24 @@
     }
     .card img {
       width: 100%;
+      height: 160px;
+      object-fit: cover;
       display: block;
       cursor: pointer;
     }
     .card-footer {
-      padding: 10px;
+      padding: 15px;
       background: #fafafa;
     }
     .download-btn {
       background: #007bff;
       color: #fff;
-      padding: 8px 12px;
+      padding: 8px 20px;
       border-radius: 5px;
       font-size: 14px;
       border: none;
       cursor: pointer;
+      transition: background 0.2s ease;
     }
     .download-btn:hover {
       background: #0056b3;
@@ -59,45 +64,84 @@
 </head>
 <body>
 
-<header>Terrapix.com</header>
+<header>Terrapix Wallpapers</header>
 
 <div class="gallery">
   <!-- Wallpaper 1 -->
   <div class="card">
-    <img src="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" alt="Sunset Wallpaper" />
+    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551542/sunset-1.2_tfztpk.jpg" alt="Sunset Wallpaper 1" loading="lazy" />
     <div class="card-footer">
-      <button class="download-btn" onclick="downloadImage('https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.jpg', 'sunset.jpg')">
-        Download
+      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg', 'sunset-1.jpg')">
+        Download HD
       </button>
     </div>
   </div>
 
   <!-- Wallpaper 2 -->
   <div class="card">
-    <img src="https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.webp" alt="Wallpaper 2" />
+    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551323/sunset_ehmdfs.jpg" alt="Sunset Wallpaper 2" loading="lazy" />
     <div class="card-footer">
-      <button class="download-btn" onclick="downloadImage('https://cdn.jsdelivr.net/gh/Amankumar0152/wallpapers@main/sunset.jpg', 'wallpaper2.jpg')">
-        Download
+      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551323/sunset_ehmdfs.jpg', 'sunset-2.jpg')">
+        Download HD
       </button>
     </div>
   </div>
 
-  <!-- Add more wallpapers below -->
+  <!-- Wallpaper 3 -->
+  <div class="card">
+    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754550743/sunset_nultug.jpg" alt="Sunset Wallpaper 3" loading="lazy" />
+    <div class="card-footer">
+      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754550743/sunset_nultug.jpg', 'sunset-3.jpg')">
+        Download HD
+      </button>
+    </div>
+  </div>
+
+  <!-- Duplicates to fill the grid (remove if you add more actual wallpapers) -->
+  <div class="card">
+    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551542/sunset-1.2_tfztpk.jpg" alt="Sunset Wallpaper 1" loading="lazy" />
+    <div class="card-footer">
+      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg', 'sunset-1.jpg')">
+        Download HD
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551323/sunset_ehmdfs.jpg" alt="Sunset Wallpaper 2" loading="lazy" />
+    <div class="card-footer">
+      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551323/sunset_ehmdfs.jpg', 'sunset-2.jpg')">
+        Download HD
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754550743/sunset_nultug.jpg" alt="Sunset Wallpaper 3" loading="lazy" />
+    <div class="card-footer">
+      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754550743/sunset_nultug.jpg', 'sunset-3.jpg')">
+        Download HD
+      </button>
+    </div>
+  </div>
 </div>
 
 <script>
 function downloadImage(url, filename) {
-  fetch(url)
-    .then(response => response.blob())
-    .then(blob => {
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    })
-    .catch(() => alert('Failed to download image.'));
+  // Create a temporary link element
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  
+  // Trigger the download
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+  // Fallback for browsers that don't support the download attribute
+  setTimeout(() => {
+    window.open(url, '_blank');
+  }, 100);
 }
 </script>
 
