@@ -5,72 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terrapix Wallpapers</title>
   <style>
+    :root {
+      --primary-color: #4361ee;
+      --primary-hover: #3a56d4;
+      --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
       margin: 0;
       padding: 20px;
-    }
-    header {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
       color: #333;
     }
+    
+    header {
+      text-align: center;
+      margin: 30px 0;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #212529;
+      font-weight: 700;
+    }
+    
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1400px;
+      margin: 40px auto;
     }
+    
     .card {
       background: #fff;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.3s ease;
-      position: relative;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
       cursor: pointer;
+      position: relative;
     }
+    
     .card:hover {
-      transform: scale(1.03);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
+    
     .card img {
       width: 100%;
-      height: 160px;
+      height: 200px;
       object-fit: cover;
       display: block;
     }
-    .size-info {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 3px 6px;
-      border-radius: 3px;
-      font-size: 11px;
-      display: none;
+    
+    .card-info {
+      padding: 15px;
     }
-    .platform-info {
-      position: absolute;
-      bottom: 8px;
-      left: 8px;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 3px 6px;
-      border-radius: 3px;
-      font-size: 11px;
-      display: none;
+    
+    .wallpaper-title {
+      font-weight: 600;
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+      color: #212529;
     }
-    .card:hover .size-info,
-    .card:hover .platform-info {
-      display: block;
+    
+    .wallpaper-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #6c757d;
     }
-    .download-page {
+    
+    /* Details Page Styles */
+    .details-page {
       display: none;
       position: fixed;
       top: 0;
@@ -81,127 +91,254 @@
       z-index: 100;
       justify-content: center;
       align-items: center;
-    }
-    .download-content {
-      background: white;
       padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      max-width: 80%;
+      box-sizing: border-box;
     }
-    .download-content img {
+    
+    .details-container {
+      background: white;
+      border-radius: 12px;
+      max-width: 1000px;
+      width: 100%;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .details-image {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8f9fa;
+    }
+    
+    .details-image img {
       max-width: 100%;
       max-height: 70vh;
-      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
+    
+    .details-content {
+      padding: 30px;
+    }
+    
+    .details-title {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #212529;
+    }
+    
+    .details-meta {
+      margin-bottom: 25px;
+    }
+    
+    .meta-item {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    
+    .meta-label {
+      font-weight: 600;
+      width: 120px;
+      color: #495057;
+    }
+    
+    .meta-value {
+      color: #6c757d;
+    }
+    
+    .download-btn {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .download-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    
     .close-btn {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 30px;
+      right: 30px;
       color: white;
       font-size: 30px;
       cursor: pointer;
+      background: rgba(0, 0, 0, 0.5);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .download-btn {
-      background: #007bff;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-    .download-btn:hover {
-      background: #0056b3;
+    
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .details-container {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      
+      .details-image {
+        padding: 15px;
+      }
+      
+      .details-content {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>Terrapix Wallpapers</header>
+<header>
+  <h1>Terrapix Wallpapers</h1>
+</header>
 
 <div class="gallery">
   <!-- Wallpaper 1 -->
-  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg', '1920x1080')">
-    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551542/sunset-1.2_tfztpk.jpg" alt="Sunset Wallpaper 1" loading="lazy" />
-    <div class="size-info">1920x1080</div>
-    <div class="platform-info">Windows • Android</div>
+  <div class="card" onclick="showDetails('Sunset Mountains', '1920×1080', '4K Ultra HD', 'Nature', '10.2 MB', 'https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg')">
+    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551542/sunset-1.2_tfztpk.jpg" alt="Sunset Mountains" loading="lazy" />
+    <div class="card-info">
+      <div class="wallpaper-title">Sunset Ganges</div>
+      <div class="wallpaper-meta">
+        <span>1920×1080</span>
+        <span>Nature</span>
+      </div>
+    </div>
   </div>
 
   <!-- Wallpaper 2 -->
-  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551323/sunset_ehmdfs.jpg', '1920x1080')">
-    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551323/sunset_ehmdfs.jpg" alt="Sunset Wallpaper 2" loading="lazy" />
-    <div class="size-info">1920x1080</div>
-    <div class="platform-info">Windows • Android</div>
+  <div class="card" onclick="showDetails('Golden Beach', '1920×1080', '4K Ultra HD', 'Beach', '8.7 MB', 'https://res.cloudinary.com/dzx2uira0/image/upload/v1754551323/sunset_ehmdfs.jpg')">
+    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551323/sunset_ehmdfs.jpg" alt="Golden Beach" loading="lazy" />
+    <div class="card-info">
+      <div class="wallpaper-title">Sunset at River</div>
+      <div class="wallpaper-meta">
+        <span>1920×1080</span>
+        <span>Beach</span>
+      </div>
+    </div>
   </div>
 
   <!-- Wallpaper 3 -->
-  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754550743/sunset_nultug.jpg', '1920x1080')">
-    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754550743/sunset_nultug.jpg" alt="Sunset Wallpaper 3" loading="lazy" />
-    <div class="size-info">1920x1080</div>
-    <div class="platform-info">Windows • Android</div>
+  <div class="card" onclick="showDetails('Ocean Sunset', '1920×1080', '4K Ultra HD', 'Ocean', '9.5 MB', 'https://res.cloudinary.com/dzx2uira0/image/upload/v1754550743/sunset_nultug.jpg')">
+    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754550743/sunset_nultug.jpg" alt="Ocean Sunset" loading="lazy" />
+    <div class="card-info">
+      <div class="wallpaper-title">Sunset in Forest</div>
+      <div class="wallpaper-meta">
+        <span>1920×1080</span>
+        <span>Ocean</span>
+      </div>
+    </div>
   </div>
 
-  <!-- Duplicates to fill the grid -->
-  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg', '1920x1080')">
-    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551542/sunset-1.2_tfztpk.jpg" alt="Sunset Wallpaper 1" loading="lazy" />
-    <div class="size-info">1920x1080</div>
-    <div class="platform-info">Windows • Android</div>
-  </div>
-
-  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551323/sunset_ehmdfs.jpg', '1920x1080')">
-    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551323/sunset_ehmdfs.jpg" alt="Sunset Wallpaper 2" loading="lazy" />
-    <div class="size-info">1920x1080</div>
-    <div class="platform-info">Windows • Android</div>
-  </div>
-
-  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754550743/sunset_nultug.jpg', '1920x1080')">
-    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754550743/sunset_nultug.jpg" alt="Sunset Wallpaper 3" loading="lazy" />
-    <div class="size-info">1920x1080</div>
-    <div class="platform-info">Windows • Android</div>
+  <!-- Wallpaper 4 -->
+  <div class="card" onclick="showDetails('Mountain View', '1920×1080', '4K Ultra HD', 'Nature', '11.3 MB', 'https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg')">
+    <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551542/sunset-1.2_tfztpk.jpg" alt="Mountain View" loading="lazy" />
+    <div class="card-info">
+      <div class="wallpaper-title">Sunset</div>
+      <div class="wallpaper-meta">
+        <span>1920×1080</span>
+        <span>Nature</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Download Page (hidden by default) -->
-<div id="downloadPage" class="download-page">
-  <span class="close-btn" onclick="hideDownloadPage()">&times;</span>
-  <div class="download-content">
-    <img id="fullSizeImage" src="" alt="Full Size Wallpaper">
-    <button class="download-btn" onclick="downloadCurrentImage()">Download Wallpaper</button>
+<!-- Details Page -->
+<div id="detailsPage" class="details-page">
+  <span class="close-btn" onclick="hideDetails()">&times;</span>
+  <div class="details-container">
+    <div class="details-image">
+      <img id="detailsImage" src="" alt="Wallpaper Details">
+    </div>
+    <div class="details-content">
+      <h2 id="detailsTitle" class="details-title">Wallpaper Title</h2>
+      <div class="details-meta">
+        <div class="meta-item">
+          <span class="meta-label">Resolution:</span>
+          <span id="detailsResolution" class="meta-value">1920×1080</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Quality:</span>
+          <span id="detailsQuality" class="meta-value">4K Ultra HD</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Category:</span>
+          <span id="detailsCategory" class="meta-value">Nature</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">File Size:</span>
+          <span id="detailsSize" class="meta-value">10.2 MB</span>
+        </div>
+      </div>
+      <button id="downloadBtn" class="download-btn" onclick="downloadWallpaper()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download Wallpaper
+      </button>
+    </div>
   </div>
 </div>
 
 <script>
 let currentDownloadUrl = '';
 
-function showDownloadPage(url, size) {
-  currentDownloadUrl = url;
-  document.getElementById('fullSizeImage').src = url;
-  document.getElementById('downloadPage').style.display = 'flex';
-  document.body.style.overflow = 'hidden'; // Prevent scrolling
+function showDetails(title, resolution, quality, category, size, imageUrl) {
+  currentDownloadUrl = imageUrl;
+  
+  // Set details content
+  document.getElementById('detailsTitle').textContent = title;
+  document.getElementById('detailsResolution').textContent = resolution;
+  document.getElementById('detailsQuality').textContent = quality;
+  document.getElementById('detailsCategory').textContent = category;
+  document.getElementById('detailsSize').textContent = size;
+  document.getElementById('detailsImage').src = imageUrl;
+  
+  // Show details page
+  document.getElementById('detailsPage').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 }
 
-function hideDownloadPage() {
-  document.getElementById('downloadPage').style.display = 'none';
-  document.body.style.overflow = 'auto'; // Re-enable scrolling
+function hideDetails() {
+  document.getElementById('detailsPage').style.display = 'none';
+  document.body.style.overflow = 'auto';
 }
 
-function downloadCurrentImage() {
+function downloadWallpaper() {
   if (!currentDownloadUrl) return;
   
   const link = document.createElement('a');
   link.href = currentDownloadUrl;
-  link.download = 'wallpaper-' + Date.now() + '.jpg';
+  link.download = 'wallpaper-' + document.getElementById('detailsTitle').textContent.toLowerCase().replace(/\s+/g, '-') + '.jpg';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 }
 
-// Close download page when clicking outside content
-document.getElementById('downloadPage').addEventListener('click', function(e) {
+// Close details page when clicking outside content
+document.getElementById('detailsPage').addEventListener('click', function(e) {
   if (e.target === this) {
-    hideDownloadPage();
+    hideDetails();
   }
 });
 </script>
