@@ -15,20 +15,34 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f8f9fa;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       color: #333;
     }
     
-    header {
+    /* Stylish Header */
+    .header {
+      background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+      color: white;
+      padding: 2rem 0;
       text-align: center;
-      margin: 30px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
     }
     
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #212529;
-      font-weight: 700;
+    .logo {
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 0;
+      letter-spacing: -1px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      font-family: 'Arial Black', sans-serif;
+    }
+    
+    .tagline {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+      font-weight: 300;
     }
     
     .gallery {
@@ -37,6 +51,7 @@
       gap: 30px;
       max-width: 1400px;
       margin: 40px auto;
+      padding: 0 20px;
     }
     
     .card {
@@ -166,6 +181,7 @@
     .download-btn:hover {
       background: var(--primary-hover);
       transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     
     .close-btn {
@@ -182,9 +198,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: all 0.2s ease;
+    }
+    
+    .close-btn:hover {
+      background: rgba(0, 0, 0, 0.7);
+      transform: rotate(90deg);
     }
     
     @media (max-width: 768px) {
+      .logo {
+        font-size: 2.5rem;
+      }
+      
       .gallery {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       }
@@ -207,19 +233,21 @@
 </head>
 <body>
 
-<header>
-  <h1>Terrapix Wallpapers</h1>
-</header>
+<!-- Stylish Header -->
+<div class="header">
+  <h1 class="logo">Terrapix.com</h1>
+  <p class="tagline">High Quality Wallpapers for Everyone</p>
+</div>
 
 <div class="gallery">
   <!-- Wallpaper 1 -->
   <div class="card" onclick="showDetails('Sunset Mountains', '1920×1080', '4K Ultra HD', 'Nature', '10.2 MB', 'https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg')">
     <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551542/sunset-1.2_tfztpk.jpg" alt="Sunset Mountains" loading="lazy" />
     <div class="card-info">
-      <div class="wallpaper-title">Sunset Ganges</div>
+      <div class="wallpaper-title">Golden Tranquility at Ganga</div>
       <div class="wallpaper-meta">
         <span>1920×1080</span>
-        <span>Nature</span>
+        <span>River</span>
       </div>
     </div>
   </div>
@@ -228,10 +256,10 @@
   <div class="card" onclick="showDetails('Golden Beach', '1920×1080', '4K Ultra HD', 'Beach', '8.7 MB', 'https://res.cloudinary.com/dzx2uira0/image/upload/v1754551323/sunset_ehmdfs.jpg')">
     <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551323/sunset_ehmdfs.jpg" alt="Golden Beach" loading="lazy" />
     <div class="card-info">
-      <div class="wallpaper-title">Sunset at River</div>
+      <div class="wallpaper-title">Ripples of Fire and Light</div>
       <div class="wallpaper-meta">
         <span>1920×1080</span>
-        <span>Beach</span>
+        <span>Nature</span>
       </div>
     </div>
   </div>
@@ -240,10 +268,10 @@
   <div class="card" onclick="showDetails('Ocean Sunset', '1920×1080', '4K Ultra HD', 'Ocean', '9.5 MB', 'https://res.cloudinary.com/dzx2uira0/image/upload/v1754550743/sunset_nultug.jpg')">
     <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754550743/sunset_nultug.jpg" alt="Ocean Sunset" loading="lazy" />
     <div class="card-info">
-      <div class="wallpaper-title">Sunset in Forest</div>
+      <div class="wallpaper-title">Whispers of the Forest at Sunset</div>
       <div class="wallpaper-meta">
         <span>1920×1080</span>
-        <span>Ocean</span>
+        <span>Nature</span>
       </div>
     </div>
   </div>
@@ -252,10 +280,10 @@
   <div class="card" onclick="showDetails('Mountain View', '1920×1080', '4K Ultra HD', 'Nature', '11.3 MB', 'https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg')">
     <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551542/sunset-1.2_tfztpk.jpg" alt="Mountain View" loading="lazy" />
     <div class="card-info">
-      <div class="wallpaper-title">Sunset</div>
+      <div class="wallpaper-title">Golden Tranquility at Ganga</div>
       <div class="wallpaper-meta">
         <span>1920×1080</span>
-        <span>Nature</span>
+        <span>River</span>
       </div>
     </div>
   </div>
@@ -327,12 +355,28 @@ function hideDetails() {
 function downloadWallpaper() {
   if (!currentDownloadUrl) return;
   
+  // Create a temporary anchor element
   const link = document.createElement('a');
   link.href = currentDownloadUrl;
-  link.download = 'wallpaper-' + document.getElementById('detailsTitle').textContent.toLowerCase().replace(/\s+/g, '-') + '.jpg';
+  
+  // Set the download attribute with a proper filename
+  const filename = document.getElementById('detailsTitle').textContent
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '') + '.jpg';
+  
+  link.download = filename;
+  link.target = '_blank';
+  
+  // Trigger the download
   document.body.appendChild(link);
   link.click();
-  document.body.removeChild(link);
+  
+  // Clean up
+  setTimeout(() => {
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(link.href);
+  }, 100);
 }
 
 // Close details page when clicking outside content
