@@ -32,6 +32,8 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       text-align: center;
       transition: transform 0.3s ease;
+      position: relative;
+      cursor: pointer;
     }
     .card:hover {
       transform: scale(1.03);
@@ -41,18 +43,71 @@
       height: 160px;
       object-fit: cover;
       display: block;
-      cursor: pointer;
     }
-    .card-footer {
-      padding: 15px;
-      background: #fafafa;
+    .size-info {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 3px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+      display: none;
+    }
+    .platform-info {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 3px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+      display: none;
+    }
+    .card:hover .size-info,
+    .card:hover .platform-info {
+      display: block;
+    }
+    .download-page {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .download-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 80%;
+    }
+    .download-content img {
+      max-width: 100%;
+      max-height: 70vh;
+      margin-bottom: 20px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
     }
     .download-btn {
       background: #007bff;
       color: #fff;
-      padding: 8px 20px;
+      padding: 10px 20px;
       border-radius: 5px;
-      font-size: 14px;
+      font-size: 16px;
       border: none;
       cursor: pointer;
       transition: background 0.2s ease;
@@ -68,81 +123,87 @@
 
 <div class="gallery">
   <!-- Wallpaper 1 -->
-  <div class="card">
+  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg', '1920x1080')">
     <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551542/sunset-1.2_tfztpk.jpg" alt="Sunset Wallpaper 1" loading="lazy" />
-    <div class="card-footer">
-      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg', 'sunset-1.jpg')">
-        Download HD
-      </button>
-    </div>
+    <div class="size-info">1920x1080</div>
+    <div class="platform-info">Windows • Android</div>
   </div>
 
   <!-- Wallpaper 2 -->
-  <div class="card">
+  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551323/sunset_ehmdfs.jpg', '1920x1080')">
     <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551323/sunset_ehmdfs.jpg" alt="Sunset Wallpaper 2" loading="lazy" />
-    <div class="card-footer">
-      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551323/sunset_ehmdfs.jpg', 'sunset-2.jpg')">
-        Download HD
-      </button>
-    </div>
+    <div class="size-info">1920x1080</div>
+    <div class="platform-info">Windows • Android</div>
   </div>
 
   <!-- Wallpaper 3 -->
-  <div class="card">
+  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754550743/sunset_nultug.jpg', '1920x1080')">
     <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754550743/sunset_nultug.jpg" alt="Sunset Wallpaper 3" loading="lazy" />
-    <div class="card-footer">
-      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754550743/sunset_nultug.jpg', 'sunset-3.jpg')">
-        Download HD
-      </button>
-    </div>
+    <div class="size-info">1920x1080</div>
+    <div class="platform-info">Windows • Android</div>
   </div>
 
-  <!-- Duplicates to fill the grid (remove if you add more actual wallpapers) -->
-  <div class="card">
+  <!-- Duplicates to fill the grid -->
+  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg', '1920x1080')">
     <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551542/sunset-1.2_tfztpk.jpg" alt="Sunset Wallpaper 1" loading="lazy" />
-    <div class="card-footer">
-      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551542/sunset-1.2_tfztpk.jpg', 'sunset-1.jpg')">
-        Download HD
-      </button>
-    </div>
+    <div class="size-info">1920x1080</div>
+    <div class="platform-info">Windows • Android</div>
   </div>
 
-  <div class="card">
+  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551323/sunset_ehmdfs.jpg', '1920x1080')">
     <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754551323/sunset_ehmdfs.jpg" alt="Sunset Wallpaper 2" loading="lazy" />
-    <div class="card-footer">
-      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754551323/sunset_ehmdfs.jpg', 'sunset-2.jpg')">
-        Download HD
-      </button>
-    </div>
+    <div class="size-info">1920x1080</div>
+    <div class="platform-info">Windows • Android</div>
   </div>
 
-  <div class="card">
+  <div class="card" onclick="showDownloadPage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754550743/sunset_nultug.jpg', '1920x1080')">
     <img src="https://res.cloudinary.com/dzx2uira0/image/upload/f_webp/v1754550743/sunset_nultug.jpg" alt="Sunset Wallpaper 3" loading="lazy" />
-    <div class="card-footer">
-      <button class="download-btn" onclick="downloadImage('https://res.cloudinary.com/dzx2uira0/image/upload/v1754550743/sunset_nultug.jpg', 'sunset-3.jpg')">
-        Download HD
-      </button>
-    </div>
+    <div class="size-info">1920x1080</div>
+    <div class="platform-info">Windows • Android</div>
+  </div>
+</div>
+
+<!-- Download Page (hidden by default) -->
+<div id="downloadPage" class="download-page">
+  <span class="close-btn" onclick="hideDownloadPage()">&times;</span>
+  <div class="download-content">
+    <img id="fullSizeImage" src="" alt="Full Size Wallpaper">
+    <button class="download-btn" onclick="downloadCurrentImage()">Download Wallpaper</button>
   </div>
 </div>
 
 <script>
-function downloadImage(url, filename) {
-  // Create a temporary link element
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = filename;
+let currentDownloadUrl = '';
+
+function showDownloadPage(url, size) {
+  currentDownloadUrl = url;
+  document.getElementById('fullSizeImage').src = url;
+  document.getElementById('downloadPage').style.display = 'flex';
+  document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+function hideDownloadPage() {
+  document.getElementById('downloadPage').style.display = 'none';
+  document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
+
+function downloadCurrentImage() {
+  if (!currentDownloadUrl) return;
   
-  // Trigger the download
+  const link = document.createElement('a');
+  link.href = currentDownloadUrl;
+  link.download = 'wallpaper-' + Date.now() + '.jpg';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-  
-  // Fallback for browsers that don't support the download attribute
-  setTimeout(() => {
-    window.open(url, '_blank');
-  }, 100);
 }
+
+// Close download page when clicking outside content
+document.getElementById('downloadPage').addEventListener('click', function(e) {
+  if (e.target === this) {
+    hideDownloadPage();
+  }
+});
 </script>
 
 </body>
